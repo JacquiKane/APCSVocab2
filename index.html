@@ -48,7 +48,17 @@
             margin-right: auto;
             color: navy;
         }
-        
+        .tablecarouseldetail {
+            width: 70%;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            color: navy;
+        }   
+
+         .tablecarouseldetail td {
+             padding: 5px;
+         }    
         .tablecarouselborders {
             padding: 5px;
             text-align: center;
@@ -66,6 +76,13 @@
             margin-right: auto;
             color: navy;
             border: 3px solid seashell;
+        }
+
+        .tablecarouseltd_detail {
+            padding: 5px;
+            text-align: left;
+            color: navy;
+            border: 3px solid blue;
         }
     </style>
 </head>
@@ -404,14 +421,72 @@
                             <div class="carousel-item active text-center p-4">
                                 <h3 class="carouselh3">OOP</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">Object Oriented Programming. A software engineering paradigm (technique) in which templates called classes are used to create data models called objects. The application is built around the objects.</p>
+                                <p class="carouseldef">Object Oriented Programming. 
+                                    A software engineering paradigm (technique) in which templates called 
+                                    classes are used to create data models called objects. 
+                                    The application is built around the objects.</p>
+                                    <p class="carouseldef">
+                                        The 4 tenets of OOP are
+                                        <table class="tablecarouseldetail">
+<tr>
+    <td>
+        Abstraction
+    </td>
+    <td>
+        Pulling out the big ideas and representing these in the OOP framewrk, as classes and objects
+    </td>
+</tr>
+<tr>
+    <td>
+        Polymorphism
+    </td>
+    <td>
+        Allowing for different objects to specialize and respond in different ways to the same request
+    </td>
+</tr>
+<tr>
+    <td>Inheritance</td>
+    <td>Reuse of a class code base called the super or parent class, in another class 
+        called the sub class or child class</td>
+</tr>
+<tr>
+    <td>Encapsulation</td>
+    <td>Subsuming the data and logic inside a unit, like a class/object</td>
+</tr>
+                                        </table>
+                                    </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
 
                                 <h3 class="carouselh3">Class</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">A software template from which data models called objects are created.</p>
+                                <p class="carouseldef">A software template from which data models 
+                                    called objects are created.</p>
+                                    <p class="carouseldef">
+                                        A class specifies
+                                        <table class="tablecarouseldetail">
+                                            <tr>
+                                                <td>
+                                                    Attributes
+                                                </td>
+                                                <td>Features or characteristics of the class or object</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Methods</td>
+                                                <td>Blocks of code that specify what the class or object can do</td>
+                                            </tr>
+
+                                        </table>
+                                    </p>
+                                    <p class="carouseldef">A Class is instantiated, or newed up, 
+                                        to create an object.</p>
+                                        <p class="carouseldef">
+                                            SoccerPlayer player = <br>
+                                            &nbsp;&nbsp;new SoccerPlayer("Harry Kane", 26, "Forward", "Spurs");
+                                        </p>
+                                        <p class="carouseldef">Here, the class is <i>SoccerPlayer</i> and the 
+                                            instance (object) is <i>player</i>.</p>
                             </div>
 
 
@@ -419,14 +494,63 @@
 
                                 <h3 class="carouselh3">Object, Instance</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">A data model created from a software template called a class. An object (also called instance) is 'instantiated' or 'newed up' from a class.</p>
+                                <p class="carouseldef">A data model created from a software template 
+                                    called a class. An object (also called instance) is 
+                                    'instantiated' or 'newed up' from a class.</p>
+                                    <p class="carouseldef">
+                                        An object has
+                                    <table class="tablecarouseldetail">
+                                        <tr>
+                                            <td>attributes</td>
+                                            <td>properties of the object</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                instance methods
+                                            </td>
+                                            <td>
+                                                blocks of code that can be called on the object, and describe what the object can do
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <p class= "carouseldef">
+                                        In order for instance methods to be called, the object has to exist. Therfore it must be
+                                        newed up before the attributes or methods can be accessed.
+                                    </p>
+                                    </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
 
                                 <h3 class="carouselh3">Attribute</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">A characteristic of an object. Other terms used include instance variable, property, data member, instance data. </p>
+                                <p class="carouseldef">A characteristic of an object or a class. 
+                                    Other terms used include instance variable, class variable, 
+                                    property, data member, instance data, class data. </p>
+                                    <p class="carouseldef">
+                                        public class SoccerPlayer {<br>
+                                            private int age;<br>
+                                            static String club;
+                                            ...<br>
+                                            public int getAge() {<br>
+                                                return this.age;<br>
+                                            }<br>
+                                            public void setAge(int newAge) {<br>
+                                                this.age = newAge;<br>
+                                            }<br>
+                                        }<br>
+                                    </p>
+                                    <p class="carouseldef"><i>age</i> is an instance variable. 
+                                         </p>
+                                         <p class="carouseldef">
+                                             SoccerPlayer player = <br>&nbsp;&nbsp;new SoccerPlayer("Harry Kane", 27, "Forward", "Spurs");
+                                             int playerAge = player.getAge();<br>
+                                             player.setAge(29);
+                                         </p>
+                                         <p class="carouseldef"><i>club</i> is a class or static (key word static binds to class) variable.
+                                        It can be accessed by using the class name and the dot access operator,<br><br>
+                                    String clubName = SoccerPlayer.club;
+                                    </p>
                             </div>
 
 
@@ -435,35 +559,135 @@
 
                                 <h3 class="carouselh3">Method</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">A block of code, given a label, and bound to an object (instance method), or class (class method). An instance method is described as something the object can do. </p>
+                                <p class="carouseldef">A block of code, given a label, 
+                                    and bound to an object (instance method), 
+                                    or class (class method). </p>
+                                    <p class="carouseldef">An instance method 
+                                    is described as something the object can do. </p>
+                                    <p class="carouseldef">
+                                        public class SoccerPlayer {<br>
+                                            private int age;<br>
+                                            ...<br>
+                                            public void messageCoach() {<br>
+                                                ...<br>
+                                            }<br><br>
+                                            public static String codeOfConduct() {<br>
+                                                System.out.println("Practice hours are reserved ...")<br>
+                                            }<br>
+                                       
+                                        }<br>
+                                    </p>
+                                    <p class="carouseldef">
+                                        SoccerPlayer player = new SoccerPlayer();<br>
+                                        player.messageCoach();<br>
+  SoccerPlayer.codeOfConduct();
+                                    </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
 
                                 <h3 class="carouselh3">Constructor</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">A special method that is responsible for instantiating or 'newing up' an object from a class. </p>
+                                <p class="carouseldef">A special method that is responsible 
+                                    for instantiating or 'newing up' an object from a class. 
+                                </p>
+                                <p class="carouseldef">If no constructor is defined, the default constructor can be used. This is the constructor defined at Object level.
+                                    Once a constructor has been defined in the class, 
+                                    then the default constructor can no longer be used.
+                                </p>
+                                <p class="carouseldef">
+                                    public SoccerPlayer(String name, int age,<br>
+                                    String position, String club) {<br>
+                                this.name = name;<br>
+                                this.age = age;<br>
+                                this.position = position;<br>
+                                this.club = club;<br>
+                            }<br>
+                                </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
 
                                 <h3 class="carouselh3">Getter or Accessor</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">A special method that returns the value of a private attribute. </p>
+                                <p class="carouseldef">A special method that returns the 
+                                    value of a private attribute. </p>
+                                    <p class="carouseldef">Attributes are declared 
+                                        <i>private</i> in order to protect them from 
+                                        direct access. Therefore 
+                                        methods that are declared public are necessary 
+                                        to get the value of the attribute.</p>
+                                        <p class="carouseldef">
+                                            public class SoccerPlayer {<br>
+
+                                                private String name;<br>
+                                                ...<br>
+                                                public String getName() {<br>
+                                                    return this.name;<br>
+                                                }<br>
+                                        </p>
+                                        <p class="carouseldef">The accessor or getter returns the value of 
+                                            the attribute, and the return type mirrors the type or class of the attribute.
+                                        </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
 
                                 <h3 class="carouselh3">Setter or Mutator</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">A special method that sets the value of a private attribute. </p>
+                                <p class="carouseldef">A special method that sets the value 
+                                    of a (typically)private attribute. </p>
+                                    <p class="carouseldef">Attributes are declared <i>private</i> in order to protect them from 
+                                        direct access. Therefore 
+                                        methods that are declared public are necessary to set the value of the attribute.</p>
+                                        <p class="carouseldef">
+                                            public class SoccerPlayer {<br>
+
+                                                private String name;<br>
+                                                ...<br>
+                                                public void setName(String newName) {<br>
+                                                    this.name = newName;<br>
+                                                }<br>
+                                        </p>
+                                        <p class="carouseldef">The mutator or setter does not have a return 
+                                            the parameter mirrors the type or class of the attribute.
+                                        </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
 
                                 <h3 class="carouselh3">Overloaded Method</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">A redeclaration of an existing method, with a different parameter list. </p>
+                                <p class="carouseldef">A redeclaration of an existing method, 
+                                    with a different parameter list. </p>
+                                    <p class="carouseldef">
+                                       <table class=tablecarouseldetail">
+                                           <tr>
+                                           <td>
+                                               
+    public SoccerPlayer() {<br>
+    ....<br>
+    }<br>
+<br>
+    public SoccerPlayer(String name, int age) {<br>
+        this.name = name;<br>
+        this.age = age;<br>
+    }<br>
+
+                                           </td>
+                                        </tr>
+                                        <tr>
+                                           <td>    public void requirements() {<br>
+                                            ....<br>
+                                        }<br><br>
+                                        public void requirements(SoccerPlayer player) {<br>
+                                            ....<br>
+                                        }<br>
+                                    </td>
+                                    </tr> 
+                                           </table>
+                                      
+                                    </p>
                             </div>
 
 
@@ -472,7 +696,25 @@
 
                                 <h3 class="carouselh3">Accessibility Modifier</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">This governs the visibility of a class, a method, an attribute. <i>private</i> gives access only within the class, whereas <i>public</i> gives access outside of the class. There are other accessibility modifiers. </p>
+                                <p class="carouseldef">This governs the visibility of a class, 
+                                    a method, an attribute. </p>
+                                    <p class="carouseldef"><i>private</i> 
+                                    gives access only within the class, 
+                                    whereas <i>public</i> gives access outside of the class. 
+                                    There are other accessibility modifiers, however these are 
+                                    outside the scope of the course. </p>
+                                    <p class="carouseldef">
+                                        public class SoccerPlayer {<br>
+
+                                            private String name;<br>
+                                            ...<br>
+                                            
+    public String getName() {
+        return name;
+    }
+                                    </p>
+                                    <p class="carouseldef">Client code, or the calling code, can new up an instance of the SoccerPlayer class, but cannot 
+                                        directly access the name attribute, instead, musy call the getName() method.</p>
                             </div>
 
 
@@ -733,7 +975,23 @@
                             <div class="carousel-item active text-center p-4">
                                 <h3 class="carouselh3">Class</h3>
                                 <h6>Unit 5, Writing Classes</h6>
-                                <p class="carouseldef">A software template in Object Oriented Programming. Software models called objects (or instances) are made from a class, in the same way an achitectural blueprint can be used to build multiple houses.</p>
+                                <p class="carouseldef">A software template in 
+                                    Object Oriented Programming. </p>
+                                    <p class="carouseldef">Software models called objects (or instances)
+                                         are made from a class,
+                                     in the same way an achitectural blueprint can be used 
+                                     to build multiple houses.</p>
+                                     <p class="carouseldef">A class is a building block of 
+                                         Object Oriented Programming, OOP.</p>
+                                         <p class="carouseldef">The 4 tenets of OOP are 
+                                             <ul>
+                                                 <li>Abstraction - Pulling out the big ideas and forming classes</li>
+                                                 <li>Polymorphism - Supporting different responses to the same request 
+                                                     from different objects</li>
+                                                     <li>Inheritance - Reuse of a class as the basis for another class</li>
+                                                     <li>Encapsulation - Subsuming the logic and data inside a unit, class or object</li>
+                                             </ul>
+                                         </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
