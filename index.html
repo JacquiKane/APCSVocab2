@@ -522,6 +522,36 @@
 
                             <div class="carousel-item text-center p-4">
 
+                                <h3 class="carouselh3">this</h3>
+                                <h6>Unit 2, Using Objects</h6>
+                                <p class="carouseldef">Keyword, <i>this</i> 
+                                    refers to the current object.</p>
+                                    <p class="carouseldef">
+                                        Below, <i>this</i> is used to set the value of 
+                                        an attribute to the value passed into the block of code.
+
+
+                                    </p>
+                                    <p class="carouseldef">
+                                        public class SoccerPlayer {<br>
+                                            private int age;<br>
+                                            
+                                            ...<br>
+                                            public void setAge(int age) {<br>
+                                                 this.age = age;<br>
+                                            }<br>
+                                            
+                                        }<br>
+                                    </p>
+                                   
+                                  
+                            </div>
+
+
+
+
+                            <div class="carousel-item text-center p-4">
+
                                 <h3 class="carouselh3">Attribute</h3>
                                 <h6>Unit 2, Using Objects</h6>
                                 <p class="carouseldef">A characteristic of an object or a class. 
@@ -530,22 +560,19 @@
                                     <p class="carouseldef">
                                         public class SoccerPlayer {<br>
                                             private int age;<br>
-                                            static String club;
+                                            static String club = "Spurs";
                                             ...<br>
                                             public int getAge() {<br>
                                                 return this.age;<br>
                                             }<br>
-                                            public void setAge(int newAge) {<br>
-                                                this.age = newAge;<br>
-                                            }<br>
+                                            
                                         }<br>
                                     </p>
                                     <p class="carouseldef"><i>age</i> is an instance variable. 
                                          </p>
                                          <p class="carouseldef">
-                                             SoccerPlayer player = <br>&nbsp;&nbsp;new SoccerPlayer("Harry Kane", 27, "Forward", "Spurs");
+                                             SoccerPlayer player = <br>&nbsp;&nbsp;new SoccerPlayer(....);<br>
                                              int playerAge = player.getAge();<br>
-                                             player.setAge(29);
                                          </p>
                                          <p class="carouseldef"><i>club</i> is a class or static (key word static binds to class) variable.
                                         It can be accessed by using the class name and the dot access operator,<br><br>
@@ -661,7 +688,7 @@
                                 <p class="carouseldef">A redeclaration of an existing method, 
                                     with a different parameter list. </p>
                                     <p class="carouseldef">
-                                       <table class=tablecarouseldetail">
+                                       <table class="tablecarouseldetail">
                                            <tr>
                                            <td>
                                                
@@ -713,8 +740,10 @@
         return name;
     }
                                     </p>
-                                    <p class="carouseldef">Client code, or the calling code, can new up an instance of the SoccerPlayer class, but cannot 
-                                        directly access the name attribute, instead, musy call the getName() method.</p>
+                                    <p class="carouseldef">Client code, or the calling code, 
+                                        can new up an instance of the SoccerPlayer class, but cannot 
+                                        directly access the name attribute because it is private,
+                                         instead, must call the getName() method, which is public.</p>
                             </div>
 
 
@@ -785,7 +814,11 @@
                             <div class="carousel-item active text-center p-4">
                                 <h3 class="carouselh3">Boolean</h3>
                                 <h6>Unit 3, Boolean Expressions & If</h6>
-                                <p class="carouseldef">Derived from the creator of Boolean Algebra, George Boole, the term refers to outcomes having values of either true or false, nothing else.</p>
+                                <p class="carouseldef">Derived from the creator of Boolean Algebra, 
+                                    George Boole, the term refers to outcomes having values of either 
+                                    true or false, nothing else.</p>
+                                    <p class="carouseldef">Boolean algebra is the basis of the design of digital computer circuits, 
+                                        and is central to the flow of logic in a computer program.</p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
@@ -793,13 +826,47 @@
                                 <h6>Unit 3, Boolean Expressions & If</h6>
                                 <p class="carouseldef">Logical statement that is either true or false.
                                 </p>
-                                <p>Like, goals > 15</p>
+                                <p class = "carouseldef">Like, <br>goals &gt; 15</p>
+                                <p class="carouseldef">Compound boolean expressions are composed of 
+                                    singleton expressions joined by Boolean operators, like AND(&& in Java), OR (|| in Java).</p>
+                                    <p class="carouseldef">
+                                        <table class="tablecarouseldetail">
+                                            <tr>
+                                                <td>boolean isSeniorKeeper = (age &gt; 21) && (position.equals("Keeper");</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    boolean isValidPlayer = (club.equals("Training") || (club.equals("Spurs");
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Boolean Operators</h3>
                                 <h6>Unit 3, Boolean Expressions & If</h6>
-                                <p class="carouseldef">Operators that act on boolean variables. The 3 basic Boolean operators are AND (Java, &&), OR (Java, ||) and NOT (Java, !).</p>
+                                <p class="carouseldef">Operators that act on boolean variables. </p>
+                                <p class="carouseldef">The 3 basic Boolean operators are 
+                                    <table class="tablecarouseldetail">
+                                        <tr>
+                                            <td>AND (Java, &&),</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                OR (Java, ||) 
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+                                        </tr>
+                                      
+                                        <td>NOT (Java, !)</td>
+                                    </tr>
+                                    </table> 
+                                    </p>
+                                    <p class= "carouseldef">Boolean operators have associated 
+                                        truth tables that map the values of the operands to the result when the Boolean operator is applied.</p>
                             </div>
 
 
@@ -807,6 +874,7 @@
 
                                 <h3 class="carouselh3">AND Operation</h3>
                                 <h6>Unit 3, Boolean Expressions & If</h6>
+                                <p class="carouseldef">The AND operation is represented by && in Java. Only true if all operands are true.</p>
                                 <p class="carouseldef">
                                     <img class="imgUnit" src="boolean1.png">
                                 </p>
@@ -901,14 +969,24 @@
                             <div class="carousel-item active text-center p-4">
                                 <h3 class="carouselh3">Iteration</h3>
                                 <h6>Unit 4, Iteration</h6>
-                                <p class="carouseldef">An action that is repetetive, happens in a loop.</p>
-                            </div>
+                                <p class="carouseldef">An action that is repetetive, 
+                                    happens in a loop.</p>
+                                    <p class="carouseldef">Iteration in computer programming enables the repeated execution of a block of code. 
+                                        Typically, a loop condition governs execution of the loop, and a <i>sentry</i> variable or loop variable is changed each time through the loop. 
+                                        The loop variable forms a part of the loop condition and determines how many times the loop executes.</p>
+                       <p class="carouseldef">If a loop condition is always true, the loop never exits.</p>
+                                    </div>
 
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Loop</h3>
                                 <h6>Unit 4, Iteration</h6>
-                                <p class="carouseldef">Term given to a construct in computer programming in which a block of code is repeated either a set number of times or infinitely.
+                                <p class="carouseldef">Term given to a construct in computer 
+                                    programming in which a block of code is repeated either a set number of times or infinitely.
                                 </p>
+                                <p class="carouseldef">A loop in computer programming enables the repeated execution of a block of code. 
+                                    Typically, a loop condition governs execution of the loop, and a <i>sentry</i> variable or loop variable is changed each time through the loop. 
+                                    The loop variable forms a part of the loop condition and determines how many times the loop executes.</p>
+                   <p class="carouseldef">If a loop condition is always true, the loop never exits.</p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
@@ -923,8 +1001,12 @@
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">For Loop</h3>
                                 <h6>Unit 4, Iteration</h6>
-                                <p class="carouseldef">A specific loop that uses the for keyword, a loop variable or sentry variable and a boolean expression to govern how many times the loop is executed. The for loop construct supports initialization and allows for specification
-                                    of an action to be taken each time through the loop.
+                                <p class="carouseldef">A specific loop that uses the for keyword, 
+                                    a loop variable or sentry variable and a boolean expression to 
+                                    govern how many times the loop is executed. </p>
+                                    <p class="carouseldef">The for loop construct supports 
+                                        initialization and allows for specification
+                                    of an action to be taken each time through the loop.</p>
                                     <img class="imgUnit" src="forforcard.png">
                                 </p>
                             </div>
@@ -984,21 +1066,49 @@
                                      <p class="carouseldef">A class is a building block of 
                                          Object Oriented Programming, OOP.</p>
                                          <p class="carouseldef">The 4 tenets of OOP are 
-                                             <ul>
-                                                 <li>Abstraction - Pulling out the big ideas and forming classes</li>
-                                                 <li>Polymorphism - Supporting different responses to the same request 
-                                                     from different objects</li>
-                                                     <li>Inheritance - Reuse of a class as the basis for another class</li>
-                                                     <li>Encapsulation - Subsuming the logic and data inside a unit, class or object</li>
-                                             </ul>
+                                             <table class="tablecarouseldetail">
+                                                 <tr>
+                                                 <td>Abstraction - Pulling out the big ideas and forming classes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Polymorphism - Different objects specializing
+                                                         different responses to the same request </td>
+                                                   </tr>
+                                                   <tr>
+                                                    <td>Inheritance - Reuse of a class as the basis for another class </td>
+                                                   </tr>
+                                                   <tr>
+                                                    <td>Encapsulation - Subsuming the logic and data inside a unit, class or object</td>
+                                                   </tr>
+                                                 </table>
                                          </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Object</h3>
                                 <h6>Unit 5, Writing Classes</h6>
-                                <p class="carouseldef">A software model made from the instructions in a class. Also called an instance. We say the object has been instatiated, or 'newed up' based on the class.
+                                <p class="carouseldef">A software model made from the instructions in a 
+                                    class. Also called an instance. We say the object has been instatiated, or 'newed up' based on the class.
                                 </p>
+                                <p class="carouseldef">
+                                    SoccerPlayer player = new SoccerPlayer();
+                                </p>
+                                <p class="carouseldef"><i>SoccerPlayer</i> is the class, and <i>player</i> represents the object.</p>
+                                <p class="carouseldef">An instance may have instance variables and instance methods. 
+                                    Instance variables may be protected by an accessibility modifier and may only be 
+                                    viewed or changed by using methods called getters and setters.</p>
+                                    <p class="carouseldef">
+                                        public class SoccerPlayer {<br>
+
+                                            private String name;<br>
+                                            ...<br>
+                                            public String getName() {<br>
+return this.name;<br>
+                                            }<br>
+                                    </p>
+
+                                    <p class="carouseldef">An object or instance is a reference to an area of memory,
+                                         the starting memory address at which the content of the object is stored.</p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
@@ -1035,7 +1145,23 @@
 
                                 </p>
 
-                                <p class="carouseldef">By convention, attributes are protected with the private accessibility modifier. Special methods called Getters and Setters get and set attribute values from outside the class.</p>
+                                <p class="carouseldef">By convention, attributes are protected with 
+                                    the private accessibility modifier. 
+                                    Methods called Getters and Setters get and set 
+                                    attribute values from outside the class. </p>
+                                    <p class="carouseldef">Below, <i>name</i> is an instance variable. 
+                                        Keyword <i>static</i> indicates that <i>division</i> is a class variable.</p> 
+                                <p class="carouseldef">
+                                    public class SoccerPlayer {<br>
+
+                                        private String name;<br>
+                                        public static String division = "Premier League";
+                                        ...<br>
+                                        public String getName() {<br>
+return this.name;<br>
+                                        }<br>
+                                </p>
+                            
                             </div>
 
                             <div class="carousel-item text-center p-4">
@@ -1044,6 +1170,26 @@
                                 <p class="carouseldef">This is a block of code tied to an object or a class. It is given a signature describing it's visibility (like public or private), the return type and the name.
 
                                 </p>
+                                <p class="carouseldef">
+                                    public class SoccerPlayer {<br>
+
+                                        private String name;<br>
+                                        ...<br>
+                                        public String getName() {<br>
+return this.name;<br>
+                                        }<br>
+                                        public static associatedSport() {<br>
+                                            return "Soccer aka European Football";<br>
+                                        }<br>
+                                </p>
+                                <p class="carouseldef"><i>getName</i> is an instance method, called on the instance. 
+                                    <i>associatedSport</i> is a class method, called on the class.</p>
+                                    <p class= "carouseldef">
+                                        SoccerPlayer player = new SoccerPlayer();<br>
+                                        ...<br>
+                                        String playerName = player.getName();<br>
+                                        String sportCategory = SoccerPlayer.associatedSport();<br>
+                                    </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
@@ -1053,6 +1199,24 @@
                                     constructor if it has a parameter list.
 
                                 </p>
+                                <p class="carouseldef">
+                                    public class SoccerPlayer {<br>
+
+                                        private String name;<br>
+                                        ....<br>
+                                    
+                                        public SoccerPlayer() {<br>
+                                        }<br>
+                                    
+                                        public SoccerPlayer(String name, int age) {<br>
+                                            this.name = name;<br>
+                                            this.age = age;<br>
+                                        }<br>
+                                </p>
+                                <p class="carouseldef">These constructors are called when the object is newed up from the class,<br>
+                                SoccerPlayer player = new SoccerPlayer();<br>
+                            SoccerPlayer player2 = new SoccerPlayer("Harry Kane", 27);</p>
+                            <p class="carouseldef">These constructors are <i>overloaded</i>.</p>
                             </div>
 
 
