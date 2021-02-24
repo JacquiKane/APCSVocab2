@@ -2257,6 +2257,7 @@
                                         </tr>
                                     </table>
                                 </p>
+                                <p>Below, items are accessed using a row index and a column index.</p>
                                 <p class="carouseldef">
                                     <table class="tablecarouselborders">
                                         <tr>
@@ -2309,7 +2310,8 @@
                                 </p>
 
                                 <p class="carouseldef">
-                                    int[][] numbers = new int[3][3]; // 3 rows, 3 columns<br> int[][] numbers = {{1,2,3}, {4,5,6}, {7,8,9}}; // 3 rows, 3 columns<br> SoccerPlayer[][] players = new SoccerPlayer[3][11]; // 3 rows, 11 columns
+                                    int[][] numbers = new int[3][3]; // 3 rows, 3 columns<br> 
+                                    int[][] numbers = {{1,2,3}, {4,5,6}, {7,8,9}}; // initializer list, 3 rows, 3 columns<br> SoccerPlayer[][] players = new SoccerPlayer[3][11]; // 3 rows, 11 columns
                                     <br>
 
                                 </p>
@@ -2363,7 +2365,7 @@
                                                 <td class="tablecarouseltd">item #9</td>
                                             </tr>
                                         </table>
-                                        <p>The row index max value is 2, the column index max value is 2.</p>
+                                        <p>In the example above, the row index max value is 2, the column index max value is 2.</p>
                                     </p>
 
 
@@ -2381,7 +2383,7 @@
 
                                 </p>
                                 <p class="carouseldef">
-                                    2D array, numbers, contains [[1,22,23], [2,333,33], [3, 44, 43]]
+                                    2D array, numbers, contains [[1,222,23], [2,333,33], [3, 444, 43]]
                                     <table class="tablecarouselborders" style="text-align: left;">
                                         <tr style="text-align: left;">
                                             <td class="tablecarouseltd">1</td>
@@ -2431,7 +2433,9 @@
 
                                         <tr>
                                             <td style="text-align: left;">
-                                                <br> int[][] numbers = new int[10][10]; // Next, 100 items added!<br> for (int rowIndex = 0; rowIndex &lt; numbers.length; rowIndex++) { <br> &nbsp;for (int colIndex = 0; colIndex &lt; numbers[0].length;
+                                                <br> int[][] numbers = new int[10][10]; <br>
+                                                // Next, 100 items added!<br> 
+                                                <br>for (int rowIndex = 0; rowIndex &lt; numbers.length; rowIndex++) { <br> &nbsp;for (int colIndex = 0; colIndex &lt; numbers[0].length;
                                                 colIndex++) { <br> &nbsp;&nbsp;&nbsp;System.out.print(numbers[rowIndex][colIndex]]);
                                                 <br> &nbsp;&nbsp;&nbsp;}
                                             </td>
@@ -2449,8 +2453,17 @@
 
                                 </p>
                                 <p class="carouseldef">
-                                    Consider a 2D array of ints, bingoNumbers,
-                                    <br>for (int[] rowOfNumbers : bingoNumbers) <br> &nbsp;&nbsp;for (int number : rowOfNumbers)<br> &nbsp;&nbsp;&nbsp;&nbsp;process(number);
+                                    Consider a 2D array of ints, bingoNumbers,<br>
+                                    <br>
+                                    int[][] bingoNumbers = new int[15][15];<br>
+                                    <br>
+                                    // Traverse the rows
+                                    <br>for (int[] rowOfNumbers : bingoNumbers) {<br> 
+                                    &nbsp;&nbsp;// Traverse the columns<br>
+                                    &nbsp;&nbsp;for (int number : rowOfNumbers) {<br> 
+                                    &nbsp;&nbsp;&nbsp;&nbsp;process(number);<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                    &nbsp;&nbsp;}
                                 </p>
 
                             </div>
@@ -2461,7 +2474,20 @@
                                 <p class="carouseldef">Loop traversal sequence through a 2D array, crossing the rows and processing elements in each row in turn.
 
                                 </p>
-
+                                <p>
+                                    int[][] numbers = {{1,2,3}, {4,5,6}, {7,8,9}};
+                                </p>
+                                4 is the fourth value. The values are printed starting with the first row, and traversing
+                                that first row, each time printing/processing a value.
+                                </p>
+                                <p> <br> ----------------- <br> | 1 &rarr; | 2 &rarr; | 3 &rarr; | <span
+                                        style="color:red; font-weight: bolder;">4</span> &rarr; |<br>
+                                        ----------------- <br> | 5 &rarr; | 6 &rarr; | 7 &rarr; | 8 &rarr; | <br>
+                                        -----------------
+                                    <br> | 4 &rarr; | 3 &rarr; | 2 &rarr; | 1 &rarr; | <br> -----------------
+                                    <br>
+    
+                                </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
@@ -2470,7 +2496,20 @@
                                 <p class="carouseldef">Loop traversal sequence through a 2D array, going down the columns and processing each element in turn.
 
                                 </p>
-
+                                <p>
+                                    int[][] numbers = {{1,2,3}, {4,5,6}, {7,8,9}};
+                                </p>
+                                2 is printed as the fourth value. The values are printed starting with the first column, and
+                                traversing down that first column, each time printing a value.
+                                </p>
+                                <p> <br> ----------------- <br> | 1 &#8628; | <span
+                                        style="color:red; font-weight: bolder;">2</span> &#8628; | 3 &#8628; | 4 &#8628;
+                                    |<br> ----------------- <br> | 5 &#8628; | 6 &#8628; | 7 &#8628; | 8 &#8628;
+                                    | <br> -----------------
+                                    <br> | 4 &#8628; | 3 &#8628; | 2 &#8628; | 1 &#8628; | <br> -----------------
+                                    <br>
+    
+                                </p>
                             </div>
 
 
@@ -2516,15 +2555,6 @@
                             </div>
 
 
-
-
-
-
-
-
-
-
-
                         </div>
                     </div>
 
@@ -2543,6 +2573,170 @@
             </div>
         </div>
     </article>
+
+
+
+
+
+
+<!-- INHERITANCE VOCAB -->
+<article id="unit9-modal" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content modal-lg">
+
+            <div class="container carouselback">
+                <div id="carouselContentunit9" class="carousel carouselback slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+
+                        <div class="carousel-item active text-center p-4">
+                            <h3 class="carouselh3">Class</h3>
+                            <h6>Unit 5, Writing Classes</h6>
+                            <p class="carouseldef">A software template in Object Oriented Programming. </p>
+                            <p class="carouseldef">Software models called objects (or instances) are made from a class, in the same way an achitectural blueprint can be used to build multiple houses.</p>
+                            <p class="carouseldef">A class is a building block of Object Oriented Programming, OOP.</p>
+                            <p class="carouseldef">The 4 tenets of OOP are
+                                <table class="tablecarouseldetail">
+                                    <tr>
+                                        <td>Abstraction - Pulling out the big ideas and forming classes</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Polymorphism - Different objects specializing different responses to the same request </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inheritance - Reuse of a class as the basis for another class </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Encapsulation - Subsuming the logic and data inside a unit, class or object</td>
+                                    </tr>
+                                </table>
+                            </p>
+                        </div>
+
+                        <div class="carousel-item text-center p-4">
+                            <h3 class="carouselh3">Object</h3>
+                            <h6>Unit 5, Writing Classes</h6>
+                            <p class="carouseldef">A software model made from the instructions in a class. Also called an instance. We say the object has been instatiated, or 'newed up' based on the class.
+                            </p>
+                            <p class="carouseldef">
+                                SoccerPlayer player = new SoccerPlayer();
+                            </p>
+                            <p class="carouseldef"><i>SoccerPlayer</i> is the class, and <i>player</i> represents the object.</p>
+                            <p class="carouseldef">An instance may have instance variables and instance methods. Instance variables may be protected by an accessibility modifier and may only be viewed or changed by using methods called getters and setters.</p>
+                            <p class="carouseldef">
+                                public class SoccerPlayer {<br> private String name;<br> ...
+                                <br> public String getName() {<br> return this.name;<br> }
+                                <br>
+                            </p>
+
+                            <p class="carouseldef">An object or instance is a reference to an area of memory, the starting memory address at which the content of the object is stored.</p>
+                        </div>
+
+                        <div class="carousel-item text-center p-4">
+                            <h3 class="carouselh3">Attribute</h3>
+                            <h6>Unit 5, Writing Classes</h6>
+                            <p class="carouseldef">A characteristic or feature of a class or object. Attributes belonging to the instance are also termed
+                                <table class="tablecarousel">
+                                    <tr>
+                                        <td>
+                                            instance variable
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            data member
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            instance data
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            property
+                                        </td>
+                                    </tr>
+
+                                </table>
+
+
+
+
+
+                            </p>
+
+                            <p class="carouseldef">By convention, attributes are protected with the private accessibility modifier. Methods called Getters and Setters get and set attribute values from outside the class. </p>
+                            <p class="carouseldef">Below, <i>name</i> is an instance variable. Keyword <i>static</i> indicates that <i>division</i> is a class variable.</p>
+                            <p class="carouseldef">
+                                public class SoccerPlayer {<br> private String name;<br> public static String division = "Premier League"; ...
+                                <br> public String getName() {<br> return this.name;<br> }
+                                <br>
+                            </p>
+
+                        </div>
+
+                        <div class="carousel-item text-center p-4">
+                            <h3 class="carouselh3">Method</h3>
+                            <h6>Unit 5, Writing Classes</h6>
+                            <p class="carouseldef">This is a block of code tied to an object or a class. It is given a signature describing it's visibility (like public or private), the return type and the name.
+
+                            </p>
+                            <p class="carouseldef">
+                                public class SoccerPlayer {<br> private String name;<br> ...
+                                <br> public String getName() {<br> return this.name;<br> }
+                                <br> public static associatedSport() {<br> return "Soccer aka European Football";<br> }
+                                <br>
+                            </p>
+                            <p class="carouseldef"><i>getName</i> is an instance method, called on the instance.
+                                <i>associatedSport</i> is a class method, called on the class.</p>
+                            <p class="carouseldef">
+                                SoccerPlayer player = new SoccerPlayer();<br> ...
+                                <br> String playerName = player.getName();<br> String sportCategory = SoccerPlayer.associatedSport();<br>
+                            </p>
+                        </div>
+
+                        <div class="carousel-item text-center p-4">
+                            <h3 class="carouselh3">Constructor</h3>
+                            <h6>Unit 5, Writing Classes</h6>
+                            <p class="carouseldef">A constructor is a special method that has responsibility for instantiating a new object based on the instructions in a class. A constructor is described as an empty constructor if it has no parameters, and a parameterized
+                                constructor if it has a parameter list.
+
+                            </p>
+                            <p class="carouseldef">
+                                public class SoccerPlayer {<br> private String name;<br> ....
+                                <br> public SoccerPlayer() {<br> }
+                                <br> public SoccerPlayer(String name, int age) {<br> this.name = name;<br> this.age = age;<br> }
+                                <br>
+                            </p>
+                            <p class="carouseldef">These constructors are called when the object is newed up from the class,<br> SoccerPlayer player = new SoccerPlayer();<br> SoccerPlayer player2 = new SoccerPlayer("Harry Kane", 27);</p>
+                            <p class="carouseldef">These constructors are <i>overloaded</i>.</p>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+
+
+                    <a class="carousel-control-prev" href="#carouselContentunit9" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselContentunit9" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
     <!----------------------------------------------------------------------------->
 
 
