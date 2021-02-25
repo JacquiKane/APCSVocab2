@@ -1774,6 +1774,7 @@
                                 <p class="carouseldef">
                                     strValues.add("item #1");<br> <br>
                                 </p>
+                                <p>or, use conveniences to add multiple elements at once,</p>
                                 <p>
                                     ArrayList
                                     <String> strValues = new ArrayList&lt;String&gt;Arrays.asList("item #1", "item #2", "item #3"));
@@ -2674,7 +2675,7 @@
                                     qtySugar, double qtyEgg) {...}<br> &nbsp;&nbsp;&nbsp;&nbsp; }
                                     <br>
                                 </p>
-                                <p class="carouseldef">public class ChocChipCookie extends PlainCookie<span class="oomph">extends</span> PlainCookie {<br> &nbsp;&nbsp; private double qtyChocChips;<br>
+                                <p class="carouseldef">public class ChocChipCookie <span class="oomph">extends</span> PlainCookie  {<br> &nbsp;&nbsp; private double qtyChocChips;<br>
                                     <br> &nbsp;&nbsp;public ChocChipCookie(double qtyChocChips, double qtyButter,<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double qtySugar, double qtyEgg) {<br>                                    &nbsp;&nbsp;&nbsp;&nbsp;super(qtyFlour, qtyButter, qtySugar, qtyEgg);
                                     <br> &nbsp;&nbsp; this.qtyChocChips = qtyChocChips;<br> }
                                     <br>
@@ -2784,115 +2785,161 @@
                                 <h3 class="carouselh3">Upcasting</h3>
                                 <h6>Unit 9, Inheritance</h6>
                                 <p class="carouseldef">
-                                    When objects (related via inheritance) respond in different ways to the same request. Overriding methods is how Java does Polymorphism!
+                                    Upcasting means casting to a superclass, 
+                                    further UP in the class hierarchy. Upcasting is also known as generalization or widening.
+
+                                </p>
+                              
+                                <p class="carouseldef">
+                                    public class PlainCookie {....}
+                          
 
                                 </p>
                                 <p class="carouseldef">
-                                    public class PlainCookie {<br> ....
-                                    <br> public void displayBakeTemp() {<br> &nbsp;&nbsp;System.out.println("385 Fahrenheit"); <br>}<br>
+                                    public class ChocChipCookie extends PlainCookie{ ....}
+                                
 
                                 </p>
                                 <p class="carouseldef">
-                                    public class ChocChipCookie extends PlainCookie{<br> ....
-                                    <br> public void displayBakeTemp() {<br> &nbsp;&nbsp;System.out.println("350 Fahrenheit"); <br>}<br>
-
-                                </p>
-                                <p class="carouseldef">PlainCookie cookie = new Cookie();<br>PlainCookie chocCookie = new ChocChipCookie();</p>
+                                    PlainCookie chocCookie = new ChocChipCookie();</p>
                                 <br>
-                                <p>chocCookie.displayBakeTemp(); // <i>350 Fahrenheit </i>is displayed!</p>
-                                <p>cookie.displayBakeTemp(); // <i>385 Fahrenheit </i>is displayed!</p>
+                                <p class="carouseldef">PlainCookie is the superclass. 
+                                    An instance of ChocChipCookie is created. 
+                                    An <i>implicit</i> upcast is done here, to the superclass.</p>
+                                    <p>Upcasting can result in hiding the specialized class' attributes/methods, but 
+                                        that can be taken care of by casting to the specialized class.</p>
+                                        <p>PlainCookie chocCookie = new ChocChipCookie();</p>
+                                        <p>...</p>
+                                        <p>int quantityChips = ((ChocChipCookie)chocCookie).getQtyChocChips();</p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Downcasting</h3>
                                 <h6>Unit 9, Inheritance</h6>
                                 <p class="carouseldef">
-                                    When objects (related via inheritance) respond in different ways to the same request. Overriding methods is how Java does Polymorphism!
+                                    Downcasting, also called specialization or narrowing, 
+                                    casting an instance of a superclass
+                                    to an instance of a subclass. 
+
+                                </p>
+                      
+<p class="carouseldef">In Java, downcasting can cause a <i>Class Cast Exception</i> - an exception that is thrown when the 
+    real object does not match the class that the object is being cast to.</p>
+                                <p class="carouseldef">
+                                    public class PlainCookie {....}
 
                                 </p>
                                 <p class="carouseldef">
-                                    public class PlainCookie {<br> ....
-                                    <br> public void displayBakeTemp() {<br> &nbsp;&nbsp;System.out.println("385 Fahrenheit"); <br>}<br>
+                                    public class ChocChipCookie extends PlainCookie{....
+                                    }
 
                                 </p>
+                                <p>This causes an incompatible types (classes) error,</p>
                                 <p class="carouseldef">
-                                    public class ChocChipCookie extends PlainCookie{<br> ....
-                                    <br> public void displayBakeTemp() {<br> &nbsp;&nbsp;System.out.println("350 Fahrenheit"); <br>}<br>
-
-                                </p>
-                                <p class="carouseldef">PlainCookie cookie = new Cookie();<br>PlainCookie chocCookie = new ChocChipCookie();</p>
+                                    ChocChipCookie cookie = new Cookie();<br>
+                                    </p>
+                                    <p>This explicit cast removes the incompatible types issue, 
+                                        but causes a Class Cast Exception to be thrown at runtime (when the code runs).</p>
+                                        <p>  ChocChipCookie cookie = (ChocChipCookie)new Cookie();<br></p>
                                 <br>
-                                <p>chocCookie.displayBakeTemp(); // <i>350 Fahrenheit </i>is displayed!</p>
-                                <p>cookie.displayBakeTemp(); // <i>385 Fahrenheit </i>is displayed!</p>
+                            <p>Downcasting is not allowed in Java, upcasting is!</p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Class Cast Exception</h3>
                                 <h6>Unit 9, Inheritance</h6>
                                 <p class="carouseldef">
-                                    When objects (related via inheritance) respond in different ways to the same request. Overriding methods is how Java does Polymorphism!
+                                    An exception that is thrown at runtime when an instance of a 
+                                    superclass is downcast to a subclass.
 
                                 </p>
                                 <p class="carouseldef">
-                                    public class PlainCookie {<br> ....
-                                    <br> public void displayBakeTemp() {<br> &nbsp;&nbsp;System.out.println("385 Fahrenheit"); <br>}<br>
+                                    public class PlainCookie {....}
 
                                 </p>
                                 <p class="carouseldef">
-                                    public class ChocChipCookie extends PlainCookie{<br> ....
-                                    <br> public void displayBakeTemp() {<br> &nbsp;&nbsp;System.out.println("350 Fahrenheit"); <br>}<br>
+                                    public class ChocChipCookie extends PlainCookie{....
+                                    }
 
                                 </p>
-                                <p class="carouseldef">PlainCookie cookie = new Cookie();<br>PlainCookie chocCookie = new ChocChipCookie();</p>
+                                <p>This causes an incompatible types (classes) error,</p>
+                                <p class="carouseldef">
+                                    ChocChipCookie cookie = new Cookie();<br>
+                                    </p>
+                                    <p class="carouseldef">This explicit cast removes the incompatible types issue, 
+                                        but causes a Class Cast Exception to be thrown at runtime (when the code runs).</p>
+                                        <p>  ChocChipCookie cookie = (ChocChipCookie)new Cookie();<br></p>
                                 <br>
-                                <p>chocCookie.displayBakeTemp(); // <i>350 Fahrenheit </i>is displayed!</p>
-                                <p>cookie.displayBakeTemp(); // <i>385 Fahrenheit </i>is displayed!</p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Implicit Call To Super</h3>
                                 <h6>Unit 9, Inheritance</h6>
                                 <p class="carouseldef">
-                                    When objects (related via inheritance) respond in different ways to the same request. Overriding methods is how Java does Polymorphism!
+                                 When classes are related in a hierarchy, 
+                                 the superclass constructor is called,
+                                 even without specific code.  
 
                                 </p>
                                 <p class="carouseldef">
-                                    public class PlainCookie {<br> ....
-                                    <br> public void displayBakeTemp() {<br> &nbsp;&nbsp;System.out.println("385 Fahrenheit"); <br>}<br>
+                                    public class PlainCookie {....<br>
+                                        &nbsp;&nbsp;public PlainCookie() {}<br>
+                                    }
 
                                 </p>
                                 <p class="carouseldef">
-                                    public class ChocChipCookie extends PlainCookie{<br> ....
-                                    <br> public void displayBakeTemp() {<br> &nbsp;&nbsp;System.out.println("350 Fahrenheit"); <br>}<br>
+                                    public class ChocChipCookie extends PlainCookie{....<br>
+                                        &nbsp;&nbsp;public ChocChipCookie() {}<br>
+                                    }
 
                                 </p>
-                                <p class="carouseldef">PlainCookie cookie = new Cookie();<br>PlainCookie chocCookie = new ChocChipCookie();</p>
-                                <br>
-                                <p>chocCookie.displayBakeTemp(); // <i>350 Fahrenheit </i>is displayed!</p>
-                                <p>cookie.displayBakeTemp(); // <i>385 Fahrenheit </i>is displayed!</p>
+                                <p class="carouseldef">
+                                    public class NutChocChipCookie extends ChocChipCookie{....
+                                        &nbsp;&nbsp;public NutChocChipCookie() {}<br>
+                                    }
+
+                                </p>
+                                <p>NutChocChipCookie cookie = new NutChocChipCookie();<br>
+                              
+                                <p>This results in calls to the PlainCookie constructor first, and then the constructor for ChocolateChipCookie. </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Explicit Call To Super</h3>
                                 <h6>Unit 9, Inheritance</h6>
                                 <p class="carouseldef">
-                                    When objects (related via inheritance) respond in different ways to the same request. Overriding methods is how Java does Polymorphism!
-
-                                </p>
-                                <p class="carouseldef">
-                                    public class PlainCookie {<br> ....
-                                    <br> public void displayBakeTemp() {<br> &nbsp;&nbsp;System.out.println("385 Fahrenheit"); <br>}<br>
-
-                                </p>
-                                <p class="carouseldef">
-                                    public class ChocChipCookie extends PlainCookie{<br> ....
-                                    <br> public void displayBakeTemp() {<br> &nbsp;&nbsp;System.out.println("350 Fahrenheit"); <br>}<br>
-
-                                </p>
-                                <p class="carouseldef">PlainCookie cookie = new Cookie();<br>PlainCookie chocCookie = new ChocChipCookie();</p>
-                                <br>
-                                <p>chocCookie.displayBakeTemp(); // <i>350 Fahrenheit </i>is displayed!</p>
-                                <p>cookie.displayBakeTemp(); // <i>385 Fahrenheit </i>is displayed!</p>
+                                    When classes are related in a hierarchy, it may be 
+                                    necessary to code a call to super, so that values are 
+                                    assigned to attributes correctly.This is explicitely calling the constructor of the superclass.
+                                   
+   
+                                   </p>
+                                   <p class="carouseldef">
+                                       public class PlainCookie {....<br>
+                                           &nbsp;&nbsp;public PlainCookie(int flour, 
+                                           int eggs, int butter) {...
+                                           }
+                                           <br>
+                                       }
+   
+                                   </p>
+                                   <p class="carouseldef">
+                                       public class ChocChipCookie extends PlainCookie{....<br>
+                                           &nbsp;&nbsp;public ChocChipCookie(int chocChips, 
+                                           int flour, int eggs, int butter) {<br>
+                                        &nbsp;&nbsp;}<br>
+                                       }
+   
+                                   </p>
+                                   <p class="carouseldef">
+                                       public class NutChocChipCookie extends ChocChipCookie{....
+                                           &nbsp;&nbsp;public NutChocChipCookie() {}<br>
+                                       }
+   
+                                   </p>
+                                   <p>NutChocChipCookie cookie = new NutChocChipCookie();<br>
+                                 
+                                   <p>This results in calls to the PlainCookie constructor first, and then the constructor for ChocolateChipCookie. </p>
                             </div>
 
                         </div>
