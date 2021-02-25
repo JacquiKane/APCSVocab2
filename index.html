@@ -86,6 +86,49 @@
             color: navy;
             border: 3px solid blue;
         }
+        
+        .oomph {
+            font-size: larger;
+            font-weight: bold;
+            color: red;
+        }
+        
+        .parent {
+            width: 150px;
+            height: 50px;
+            margin-left: 250px;
+            background-color: lightgreen;
+            color: white;
+            border: 2px solid grey;
+            border-radius: 15px;
+            font-size: larger;
+        }
+        
+        .child {
+            width: 200px;
+            height: 50px;
+            margin-left: 250px;
+            background-color: limegreen;
+            color: white;
+            border: 2px solid grey;
+            border-radius: 15px;
+            font-size: larger;
+        }
+        
+        .grandchild {
+            width: 300px;
+            height: 50px;
+            margin-left: 250px;
+            background-color: darkgreen;
+            color: white;
+            border: 2px solid grey;
+            border-radius: 15px;
+            font-size: larger;
+        }
+        
+        .bigarrow {
+            font-size: 2em;
+        }
     </style>
 </head>
 
@@ -179,14 +222,14 @@
                 </section>
 
                 <section class="mb-5 col-10 col-md-6 col-lg-4 col-xl-3">
-                    <a data-toggle="modal" data-target="#unit6-modal" data-highres="unit8.png" href="#">
+                    <a data-toggle="modal" data-target="#unit8-modal" data-highres="unit8.png" href="#">
                         <img class="layout-image imgUnit" src="unit8.png" alt="Unit 8, 2D Arrays">
                     </a>
                     <h5 class="layout-title pt-2">Unit 8 - 2D Arrays</h5>
                 </section>
 
                 <section class="mb-5 col-10 col-md-6 col-lg-4 col-xl-3">
-                    <a data-toggle="modal" data-target="#" data-highres="unit9.png" href="#">
+                    <a data-toggle="modal" data-target="#unit9-modal" data-highres="unit9.png" href="#">
                         <img class="layout-image imgUnit" src="unit9.png" alt="Unit 9, Inheritance">
                     </a>
                     <h5 class="layout-title pt-2">Unit 9 - Inheritance</h5>
@@ -1716,9 +1759,7 @@
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">ArrayList</h3>
                                 <h6>Unit 7, ArrayLists</h6>
-                                <p class="carouseldef">Data structure that stores a collection of elements, 
-								each identified by an array index. Elements are references,not primitives.
-								This data structure is flexible, elements can be added, modified and removed.
+                                <p class="carouseldef">Data structure that stores a collection of elements, each identified by an array index. Elements are references,not primitives. This data structure is flexible, elements can be added, modified and removed.
                                 </p>
                                 <p class="carouseldef">
                                     ArrayLists are declared with the class <i>ArrayList</i>, and must be newed up with the new operator.
@@ -1731,15 +1772,15 @@
                                 </p>
                                 <p>Populate the ArrayList using the <i>add method</i></p>
                                 <p class="carouseldef">
-                                    strValues.add("item #1");<br> strValues.add("item #2");<br> strValues.add("item #3");<br>
+                                    strValues.add("item #1");<br> <br>
                                 </p>
-                                <p>or</p>
+                                <p>or, use conveniences to add multiple elements at once,</p>
                                 <p>
                                     ArrayList
                                     <String> strValues = new ArrayList&lt;String&gt;Arrays.asList("item #1", "item #2", "item #3"));
                                 </p>
 
-                                <p class="carouseldef">ArrayLists are used to store multiple quantities, representing a programming convenience and alternative to declaring and managing multiple variables.</p>
+
                             </div>
 
                             <div class="carousel-item text-center p-4">
@@ -1878,13 +1919,7 @@
                                                 <br> &nbsp;&nbsp;&nbsp;}
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td style="text-align: left;">
-                                                <br> ArrayList&lt;Integer&gt; numbers= new ArrayList&lt;Integer&gt;(); // Next, 100 items added!<br> int index = 0;<br> while (index &lt;numbers.size() ) {<br> &nbsp;&nbsp;&nbsp; System.out.print(numbers.get(index));
-                                                <br>&nbsp;&nbsp;&nbsp; index++;
-                                                <br> &nbsp;&nbsp;&nbsp;}
-                                            </td>
-                                        </tr>
+
                                     </table>
                                 </p>
                             </div>
@@ -2232,6 +2267,702 @@
     </article>
 
 
+
+    <!-- 2D Array Vocab -->
+    <article id="unit8-modal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content modal-lg">
+
+                <div class="container carouselback">
+                    <div id="carouselContentunit8" class="carousel carouselback slide" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+
+                            <div class="carousel-item active text-center p-4">
+                                <h3 class="carouselh3">Data Structure</h3>
+                                <h6>Unit 8, 2D Arrays</h6>
+                                <p class="carouseldef">Feature of programming languages, supports storing and processing data, showing relationships.</p>
+                                <p class="carouseldef">Examples of data structures include arrays, Arraylist objects, 2 Dimensional arrays.</p>
+                                <p class="carouseldef">
+                                    <table class="tablecarouselborders">
+                                        <tr>
+                                            <td class="tablecarouseltd">item #1</td>
+                                            <td class="tablecarouseltd">item #2</td>
+                                            <td class="tablecarouseltd">item #3</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablecarouseltd">item #4</td>
+                                            <td class="tablecarouseltd">item #5</td>
+                                            <td class="tablecarouseltd">item #6</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablecarouseltd">item #7</td>
+                                            <td class="tablecarouseltd">item #8</td>
+                                            <td class="tablecarouseltd">item #9</td>
+                                        </tr>
+                                    </table>
+                                </p>
+                                <p>Below, items are accessed using a row index and a column index.</p>
+                                <p class="carouseldef">
+                                    <table class="tablecarouselborders">
+                                        <tr>
+                                            <td class="tablecarouseltd">00</td>
+                                            <td class="tablecarouseltd">01</td>
+                                            <td class="tablecarouseltd">02</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablecarouseltd">10</td>
+                                            <td class="tablecarouseltd">11</td>
+                                            <td class="tablecarouseltd">12</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablecarouseltd">20</td>
+                                            <td class="tablecarouseltd">21</td>
+                                            <td class="tablecarouseltd">22</td>
+                                        </tr>
+                                    </table>
+                                </p>
+                                <p class="carouseldef">These data structures extend the ability of a programming language, and facilitate data manipulation and processing. </p>
+                            </div>
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">2D Array</h3>
+                                <h6>Unit 8, 2D Arrays</h6>
+                                <p class="carouseldef">Matrix-like data structure that stores a collection of elements, each identified by a row index and a column index, see below, first digit represents the row, second digit represents the column. Elements can be primitives
+                                    or references. This data structure is fixed in size.
+                                </p>
+                                <p>
+                                    <table class="tablecarouselborders">
+                                        <tr>
+                                            <td class="tablecarouseltd">00</td>
+                                            <td class="tablecarouseltd">01</td>
+                                            <td class="tablecarouseltd">02</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablecarouseltd">10</td>
+                                            <td class="tablecarouseltd">11</td>
+                                            <td class="tablecarouseltd">12</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablecarouseltd">20</td>
+                                            <td class="tablecarouseltd">21</td>
+                                            <td class="tablecarouseltd">22</td>
+                                        </tr>
+                                    </table>
+                                </p>
+                                <p class="carouseldef">
+                                    2D arrays are declared with the type or class, a double set of square brackets, and must be newed up with the new operator, or initialized with an initializer list.
+                                </p>
+
+                                <p class="carouseldef">
+                                    int[][] numbers = new int[3][3]; // 3 rows, 3 columns<br> int[][] numbers = {{1,2,3}, {4,5,6}, {7,8,9}}; // initializer list, 3 rows, 3 columns<br> SoccerPlayer[][] players = new SoccerPlayer[3][11]; // 3 rows, 11 columns
+                                    <br>
+
+                                </p>
+
+
+
+                            </div>
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">2D Array Index Values, Subscripts </h3>
+                                <h6>Unit 8, 2D Arrays</h6>
+                                <p class="carouseldef">The row index is a whole number valid in range 0 to 1 less than the length of the 2D array, or the number of rows. The column index is a whole number valid in range 0 to 1 less than the number of columns.
+
+                                </p>
+                                <p>The <i>length</i> property gives the number of rows.</p>
+                                <p>The length property of a row gives the number of columns.</p>
+                                <p>int[][] numbers = {{1,2}, {3,4}, {5,6}, {7,8}};</p>
+                                <p><i>numbers.length</i> is 4, this is the number of rows.</p>
+                                <p><i>numbers[0].length</i> is 2, this is the number of columns</p>
+
+
+
+                            </div>
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Out Of Bounds Error</h3>
+                                <h6>Unit 8, 2D Arrays</h6>
+                                <p class="carouseldef">Condition,
+                                    <p>Given 2D array, matrix,</p>
+                                    <p>row index &lt; 0, or row index &gt;= matrix.length </p>
+                                    <p>or</p>
+                                    <p> column index &lt; 0, or column index &gt;= matrix[0].length
+
+                                    </p>
+
+                                    <p class="carouseldef">
+                                        <table class="tablecarouselborders" style="text-align: left;">
+                                            <tr style="text-align: left;">
+                                                <td class="tablecarouseltd">item #1</td>
+                                                <td class="tablecarouseltd">item #2</td>
+                                                <td class="tablecarouseltd">item #3</td>
+                                            </tr>
+                                            <tr style="text-align: left;">
+                                                <td class="tablecarouseltd">item #4</td>
+                                                <td class="tablecarouseltd">item #5</td>
+                                                <td class="tablecarouseltd">item #6</td>
+                                            </tr>
+                                            <tr style="text-align: left;">
+                                                <td class="tablecarouseltd">item #7</td>
+                                                <td class="tablecarouseltd">item #8</td>
+                                                <td class="tablecarouseltd">item #9</td>
+                                            </tr>
+                                        </table>
+                                        <p>In the example above, the row index max value is 2, the column index max value is 2.</p>
+                                    </p>
+
+
+                                    <p class="carouseldef">Use the <i>length</i> property to ensure that only valid index values are used. </p>
+
+                            </div>
+
+
+
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">2D Array Elements</h3>
+                                <h6>Unit 8, 2D Arrays</h6>
+                                <p class="carouseldef">Entity (primitive or object) array contains, identified by 2D array row and column index.
+
+                                </p>
+                                <p class="carouseldef">
+                                    2D array, numbers, contains [[1,222,23], [2,333,33], [3, 444, 43]]
+                                    <table class="tablecarouselborders" style="text-align: left;">
+                                        <tr style="text-align: left;">
+                                            <td class="tablecarouseltd">1</td>
+                                            <td class="tablecarouseltd">222</td>
+                                            <td class="tablecarouseltd">23</td>
+                                        </tr>
+                                        <tr style="text-align: left;">
+                                            <td class="tablecarouseltd">2</td>
+                                            <td class="tablecarouseltd">333</td>
+                                            <td class="tablecarouseltd">33</td>
+                                        </tr>
+                                        <tr style="text-align: left;">
+                                            <td class="tablecarouseltd">3</td>
+                                            <td class="tablecarouseltd">444</td>
+                                            <td class="tablecarouseltd">43</td>
+                                        </tr>
+                                    </table>
+                                </p>
+                                <p class="carouseldef">
+                                    <table class="tablecarousel" style="text-align: left;">
+                                        <tr style="text-align: left;">
+                                            <td>numbers[0][0]] is 1, the list element at row 0, column 0, is 1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>numbers[1][2] is 33</td>
+                                        </tr>
+                                        <tr>
+                                            <td>numbers[2][1] is 444</td>
+                                        </tr>
+                                    </table>
+                                </p>
+                            </div>
+
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Traversing 2D Arrays</h3>
+                                <h6>Unit 8, 2D Arrays</h6>
+                                <p class="carouseldef">Sequencing through the elements of the 2D array, typically using a nested loop - like regular for, enhanced for, while.
+
+                                </p>
+                                <p class="carouseldef">
+                                    <table class="tablecarousel">
+                                        <tr>
+                                            <td cellspan="2" style="text-align: center;">
+                                                iterate through the arrays<br> &nbsp;&nbsp;iterate through each array<br> &nbsp;&nbsp;&nbsp;&nbsp; use indices to access list element<br> &nbsp;&nbsp;&nbsp;&nbsp;change value of indices</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td style="text-align: left;">
+                                                <br> int[][] numbers = new int[10][10]; <br> // Next, 100 items added!<br>
+                                                <br>for (int rowIndex = 0; rowIndex &lt; numbers.length; rowIndex++) { <br> &nbsp;for (int colIndex = 0; colIndex &lt; numbers[0].length; colIndex++) { <br> &nbsp;&nbsp;&nbsp;System.out.print(numbers[rowIndex][colIndex]]);
+                                                <br> &nbsp;&nbsp;&nbsp;}
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </p>
+                            </div>
+
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Enhanced For Loop</h3>
+                                <h6>Unit 8, 2D Arrays</h6>
+                                <p class="carouseldef">Loop, sequences through the 2D array. A nested loop is necessary.
+
+                                </p>
+                                <p class="carouseldef">
+                                    Consider a 2D array of ints, bingoNumbers,<br>
+                                    <br> int[][] bingoNumbers = new int[15][15];<br>
+                                    <br> // Traverse the rows
+                                    <br>for (int[] rowOfNumbers : bingoNumbers) {<br> &nbsp;&nbsp;// Traverse the columns<br> &nbsp;&nbsp;for (int number : rowOfNumbers) {<br> &nbsp;&nbsp;&nbsp;&nbsp;process(number);
+                                    <br> &nbsp;&nbsp;&nbsp;&nbsp;}
+                                    <br> &nbsp;&nbsp;}
+                                </p>
+
+                            </div>
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Row Major Order</h3>
+                                <h6>Unit 8, 2D Arrays</h6>
+                                <p class="carouseldef">Loop traversal sequence through a 2D array, crossing the rows and processing elements in each row in turn.
+
+                                </p>
+                                <p>
+                                    int[][] numbers = {{1,2,3}, {4,5,6}, {7,8,9}};
+                                </p>
+                                4 is the fourth value. The values are printed starting with the first row, and traversing that first row, each time printing/processing a value.
+                                </p>
+                                <p> <br> ----------------- <br> | 1 &rarr; | 2 &rarr; | 3 &rarr; | <span style="color:red; font-weight: bolder;">4</span> &rarr; |<br> ----------------- <br> | 5 &rarr; | 6 &rarr; | 7 &rarr; | 8 &rarr; | <br> -----------------
+                                    <br> | 4 &rarr; | 3 &rarr; | 2 &rarr; | 1 &rarr; | <br> -----------------
+                                    <br>
+
+                                </p>
+                            </div>
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Column Major Order</h3>
+                                <h6>Unit 8, 2D Arrays</h6>
+                                <p class="carouseldef">Loop traversal sequence through a 2D array, going down the columns and processing each element in turn.
+
+                                </p>
+                                <p>
+                                    int[][] numbers = {{1,2,3}, {4,5,6}, {7,8,9}};
+                                </p>
+                                2 is printed as the fourth value. The values are printed starting with the first column, and traversing down that first column, each time printing a value.
+                                </p>
+                                <p> <br> ----------------- <br> | 1 &#8628; | <span style="color:red; font-weight: bolder;">2</span> &#8628; | 3 &#8628; | 4 &#8628; |
+                                    <br> ----------------- <br> | 5 &#8628; | 6 &#8628; | 7 &#8628; | 8 &#8628; | <br> -----------------
+                                    <br> | 4 &#8628; | 3 &#8628; | 2 &#8628; | 1 &#8628; | <br> -----------------
+                                    <br>
+
+                                </p>
+                            </div>
+
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Populate 2D Array</h3>
+                                <h6>Unit 8, 2D Arrays</h6>
+                                <p class="carouseldef">Add elements to the 2D Array.
+                                </p>
+                                <p class="carouseldef">
+                                    SoccerPlayer[][] teams = new SoccerPlayer[3][3]; </p>
+                                <p>teams[0][0] = new SoccerPlayer("Harry Kane", 27, "Forward", "Spurs"));</p>
+
+
+                                <p class="carouseldef">
+                                    ... or by using an initializer list, with SoccerPlayer instances,
+                                </p>
+                                <p class="carouseldef">
+                                    SoccerPlayer[][] teams = {{player1, player2, player3}, <br> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; {player4, player5, player6}, <br> &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; {player7, player8, player9}};
+                                </p>
+                            </div>
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Linear Search</h3>
+                                <h6>Unit 8, 2D Arrays</h6>
+                                <p class="carouseldef">Search algorithm, sequences through list, comparing each element to target.
+                                </p>
+                                <p class="carouseldef">
+                                    <table class="tablecarouselborders">
+                                        <tr>
+                                            <td class="tablecarouseltd">item #1</td>
+                                            <td class="tablecarouseltd">item #2</td>
+                                            <td class="tablecarouseltd">item #3</td>
+                                            <td class="tablecarouseltd">item #4</td>
+                                        </tr>
+                                    </table>
+                                </p>
+                                <p class="carouseldef">
+                                    start at index 0<br> while (index in bounds) { <br> &nbsp;&nbsp; check if element at index equals target
+                                    <br> &nbsp;&nbsp;if it does, take action,
+                                    <br>&nbsp;&nbsp;&nbsp;else increase index &nbsp;&nbsp;
+                                    <br>&nbsp;&nbsp;&nbsp;}
+                                </p>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+
+                    <a class="carousel-control-prev" href="#carouselContentunit8" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselContentunit8" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+
+
+
+
+
+    <!-- INHERITANCE VOCAB -->
+    <article id="unit9-modal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content modal-lg">
+
+                <div class="container carouselback">
+                    <div id="carouselContentunit9" class="carousel carouselback slide" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+
+
+                            <div class="carousel-item active text-center p-4">
+                                <h3 class="carouselh3">Class</h3>
+                                <h6>Unit 9, Inheritance</h6>
+                                <p class="carouseldef">A software template in Object Oriented Programming. </p>
+                                <p class="carouseldef">Software models called objects (or instances) are made from a class, in the same way an achitectural blueprint can be used to build multiple houses.</p>
+                                <p class="carouseldef">A class is a building block of Object Oriented Programming, OOP.</p>
+                                <p class="carouseldef">The 4 tenets of OOP are
+                                    <table class="tablecarouseldetail">
+                                        <tr>
+                                            <td>Abstraction - Pulling out the big ideas and forming classes</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Polymorphism - Different objects specializing different responses to the same request </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Inheritance - Reuse of a class as the basis for another class </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Encapsulation - Subsuming the logic and data inside a unit, class or object</td>
+                                        </tr>
+                                    </table>
+                                </p>
+                            </div>
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Object</h3>
+                                <h6>Unit 9, Inheritance</h6>
+                                <p class="carouseldef">A software model made from the instructions in a class. Also called an instance. We say the object has been instatiated, or 'newed up' based on the class.
+                                </p>
+                                <p class="carouseldef">
+                                    SoccerPlayer player = new SoccerPlayer();
+                                </p>
+                                <p class="carouseldef"><i>SoccerPlayer</i> is the class, and <i>player</i> represents the object.</p>
+                                <p class="carouseldef">An instance may have instance variables and instance methods. Instance variables may be protected by an accessibility modifier and may only be viewed or changed by using methods called getters and setters.</p>
+                                <p class="carouseldef">
+                                    public class SoccerPlayer {<br> private String name;<br> ...
+                                    <br> public String getName() {<br> return this.name;<br> }
+                                    <br>
+                                </p>
+
+                                <p class="carouseldef">An object or instance is a reference to an area of memory, the starting memory address at which the content of the object is stored.</p>
+                            </div>
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Inheritance</h3>
+                                <h6>Unit 9, Inheritance</h6>
+                                <p class="carouseldef">The ability of one class, the subclass, to reuse methods and properties of another class, the superclass.
+
+                                </p>
+
+                                <p class="carouseldef"><i>Inheritance</i> is designated with keyword <i>extends</i> in Java. </p>
+                                <p>Below, class, <i>ChocolateChipCookie</i> inherits from class <i>PlainCookie</i>. Note constructors.</p>
+                                <p class="carouseldef">
+                                    public class PlainCookie {<br> &nbsp;&nbsp; private double qtyFlour;<br> &nbsp;&nbsp; // Other attributes, constructor, methods<br> &nbsp;&nbsp;&nbsp;&nbsp;public PlainCookie(double qtyFlour, double qtyButter,<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double
+                                    qtySugar, double qtyEgg) {...}<br> &nbsp;&nbsp;&nbsp;&nbsp; }
+                                    <br>
+                                </p>
+                                <p class="carouseldef">public class ChocChipCookie <span class="oomph">extends</span> PlainCookie  {<br> &nbsp;&nbsp; private double qtyChocChips;<br>
+                                    <br> &nbsp;&nbsp;public ChocChipCookie(double qtyChocChips, double qtyButter,<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double qtySugar, double qtyEgg) {<br>                                    &nbsp;&nbsp;&nbsp;&nbsp;super(qtyFlour, qtyButter, qtySugar, qtyEgg);
+                                    <br> &nbsp;&nbsp; this.qtyChocChips = qtyChocChips;<br> }
+                                    <br>
+                                </p>
+                            </div>
+
+
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Class Hierarchy</h3>
+                                <h6>Unit 9, Inheritance</h6>
+                                <p class="carouseldef">A set of classes related via <i>Inheritance</i>.
+
+                                </p>
+                                <div class="parent">PlainCookie&#127850;</div>
+                                <span class="bigarrow">&#x21a7;</span>
+
+                                <div class="child">ChocChipCookie &#127850;</div>
+
+                                <span class="bigarrow">&#x21a7;</span>
+
+                                <div class="grandchild">NutChocChipCookie&#127850;</div>
+                                <br>
+                                <p><i>PlainCookie</i> is the parent class of <i>ChocChipCookie</i>, which in turn is the parent class of
+                                    <i>NutChocChipCookie</i>.</p>
+                                <p>An IS-A relationship exists between the subclasses and the superclass. NutChocChipCookie IS-A ChocChipCookie, which IS-A PlainCookie.
+                                </p>
+
+                            </div>
+
+
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Superclass, Subclass</h3>
+                                <h6>Unit 9, Inheritance</h6>
+                                <p class="carouseldef">A Superclass or parent class is reused by a subclass or child class, via <i>Inheritance</i>.
+
+                                </p>
+                                <div class="parent">PlainCookie&#127850;</div>
+                                <span class="bigarrow">&#x21a7;</span>
+
+                                <div class="child">ChocChipCookie &#127850;</div>
+
+                                <span class="bigarrow">&#x21a7;</span>
+
+                                <div class="grandchild">NutChocChipCookie&#127850;</div>
+                                <br>
+                                <p><i>PlainCookie</i> is the parent class of <i>ChocChipCookie</i>, 
+                                    which in turn is the parent class of
+                                    <i>NutChocChipCookie</i>.</p>
+                                <p>An IS-A relationship exists between the subclasses and the superclass. NutChocChipCookie IS-A ChocChipCookie, which IS-A PlainCookie.
+                                </p>
+
+                            </div>
+
+
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Override</h3>
+                                <h6>Unit 9, Inheritance</h6>
+                                <p class="carouseldef">
+                                    A subclass can redefine a method from the parent class. When the method is called from an instance of the subclass, the method defined in the subclass is called, thus <span class="oomph">overriding</span> the method
+                                    in the superclass.
+
+                                </p>
+                                <p class="carouseldef">
+                                    public class PlainCookie {<br> ....
+                                    <br> public void displayBakeTemp() {<br> &nbsp;&nbsp;System.out.println("385 Fahrenheit"); <br>}<br>
+
+                                </p>
+                                <p class="carouseldef">
+                                    public class ChocChipCookie {<br> ....
+                                    <br> public void displayBakeTemp() {<br> &nbsp;&nbsp;System.out.println("350 Fahrenheit"); <br>}<br>
+
+                                </p>
+                                <p class="carouseldef">PlainCookie cookie = new Cookie();</p>
+                                <p class="carouseldef">PlainCookie chocCookie = new ChocChipCookie();</p>
+
+                                <p>chocCookie.displayBakeTemp();</p>
+                                <p>As a result of the code, <i>350 Fahrenheit </i>is displayed!</p>
+                            </div>
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Polymorphism</h3>
+                                <h6>Unit 9, Inheritance</h6>
+                                <p class="carouseldef">
+                                    When objects (related via inheritance) respond in different ways to the same request. Overriding methods is how Java does Polymorphism!
+
+                                </p>
+                                <p class="carouseldef">
+                                    public class PlainCookie {<br> ....
+                                    <br> public void displayBakeTemp() {<br> &nbsp;&nbsp;System.out.println("385 Fahrenheit"); <br>}<br>
+
+                                </p>
+                                <p class="carouseldef">
+                                    public class ChocChipCookie extends PlainCookie{<br> ....
+                                    <br> public void displayBakeTemp() {<br> &nbsp;&nbsp;System.out.println("350 Fahrenheit"); <br>}<br>
+
+                                </p>
+                                <p class="carouseldef">PlainCookie cookie = new Cookie();<br>PlainCookie chocCookie = new ChocChipCookie();</p>
+                                <br>
+                                <p>chocCookie.displayBakeTemp(); // <i>350 Fahrenheit </i>is displayed!</p>
+                                <p>cookie.displayBakeTemp(); // <i>385 Fahrenheit </i>is displayed!</p>
+                            </div>
+
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Upcasting</h3>
+                                <h6>Unit 9, Inheritance</h6>
+                                <p class="carouseldef">
+                                    Upcasting means casting to a superclass, 
+                                    further UP in the class hierarchy. Upcasting is also known as generalization or widening.
+
+                                </p>
+                              
+                                <p class="carouseldef">
+                                    public class PlainCookie {....}
+                          
+
+                                </p>
+                                <p class="carouseldef">
+                                    public class ChocChipCookie extends PlainCookie{ ....}
+                                
+
+                                </p>
+                                <p class="carouseldef">
+                                    PlainCookie chocCookie = new ChocChipCookie();</p>
+                                <br>
+                                <p class="carouseldef">PlainCookie is the superclass. 
+                                    An instance of ChocChipCookie is created. 
+                                    An <i>implicit</i> upcast is done here, to the superclass.</p>
+                                    <p>Upcasting can result in hiding the specialized class' attributes/methods, but 
+                                        that can be taken care of by casting to the specialized class.</p>
+                                        <p>PlainCookie chocCookie = new ChocChipCookie();</p>
+                                        <p>...</p>
+                                        <p>int quantityChips = ((ChocChipCookie)chocCookie).getQtyChocChips();</p>
+                            </div>
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Downcasting</h3>
+                                <h6>Unit 9, Inheritance</h6>
+                                <p class="carouseldef">
+                                    Downcasting, also called specialization or narrowing, 
+                                    casting an instance of a superclass
+                                    to an instance of a subclass. 
+
+                                </p>
+                      
+<p class="carouseldef">In Java, downcasting can cause a <i>Class Cast Exception</i> - an exception that is thrown when the 
+    real object does not match the class that the object is being cast to.</p>
+                                <p class="carouseldef">
+                                    public class PlainCookie {....}
+
+                                </p>
+                                <p class="carouseldef">
+                                    public class ChocChipCookie extends PlainCookie{....
+                                    }
+
+                                </p>
+                                <p>This causes an incompatible types (classes) error,</p>
+                                <p class="carouseldef">
+                                    ChocChipCookie cookie = new Cookie();<br>
+                                    </p>
+                                    <p>This explicit cast removes the incompatible types issue, 
+                                        but causes a Class Cast Exception to be thrown at runtime (when the code runs).</p>
+                                        <p>  ChocChipCookie cookie = (ChocChipCookie)new Cookie();<br></p>
+                                <br>
+                            <p>Downcasting is not allowed in Java, upcasting is!</p>
+                            </div>
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Class Cast Exception</h3>
+                                <h6>Unit 9, Inheritance</h6>
+                                <p class="carouseldef">
+                                    An exception that is thrown at runtime when an instance of a 
+                                    superclass is downcast to a subclass.
+
+                                </p>
+                                <p class="carouseldef">
+                                    public class PlainCookie {....}
+
+                                </p>
+                                <p class="carouseldef">
+                                    public class ChocChipCookie extends PlainCookie{....
+                                    }
+
+                                </p>
+                                <p>This causes an incompatible types (classes) error,</p>
+                                <p class="carouseldef">
+                                    ChocChipCookie cookie = new Cookie();<br>
+                                    </p>
+                                    <p class="carouseldef">This explicit cast removes the incompatible types issue, 
+                                        but causes a Class Cast Exception to be thrown at runtime (when the code runs).</p>
+                                        <p>  ChocChipCookie cookie = (ChocChipCookie)new Cookie();<br></p>
+                                <br>
+                            </div>
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Implicit Call To Super</h3>
+                                <h6>Unit 9, Inheritance</h6>
+                                <p class="carouseldef">
+                                 When classes are related in a hierarchy, 
+                                 the superclass constructor is called,
+                                 even without specific code.  
+
+                                </p>
+                                <p class="carouseldef">
+                                    public class PlainCookie {....<br>
+                                        &nbsp;&nbsp;public PlainCookie() {}<br>
+                                    }
+
+                                </p>
+                                <p class="carouseldef">
+                                    public class ChocChipCookie extends PlainCookie{....<br>
+                                        &nbsp;&nbsp;public ChocChipCookie() {}<br>
+                                    }
+
+                                </p>
+                                <p class="carouseldef">
+                                    public class NutChocChipCookie extends ChocChipCookie{....
+                                        &nbsp;&nbsp;public NutChocChipCookie() {}<br>
+                                    }
+
+                                </p>
+                                <p>NutChocChipCookie cookie = new NutChocChipCookie();<br>
+                              
+                                <p>This results in calls to the PlainCookie constructor first, and then the constructor for ChocolateChipCookie. </p>
+                            </div>
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Explicit Call To Super</h3>
+                                <h6>Unit 9, Inheritance</h6>
+                                <p class="carouseldef">
+                                    When classes are related in a hierarchy, it may be 
+                                    necessary to code a call to super, so that values are 
+                                    assigned to attributes correctly.This is explicitely calling the constructor of the superclass.
+                                   
+   
+                                   </p>
+                                   <p class="carouseldef">
+                                       public class PlainCookie {....<br>
+                                           &nbsp;&nbsp;public PlainCookie(int flour, 
+                                           int eggs, int butter) {...
+                                           }
+                                           <br>
+                                       }
+   
+                                   </p>
+                                   <p class="carouseldef">
+                                       public class ChocChipCookie extends PlainCookie{....<br>
+                                           &nbsp;&nbsp;public ChocChipCookie(int chocChips, 
+                                           int flour, int eggs, int butter) {<br>
+                                        &nbsp;&nbsp;}<br>
+                                       }
+   
+                                   </p>
+                                   <p class="carouseldef">
+                                       public class NutChocChipCookie extends ChocChipCookie{....
+                                           &nbsp;&nbsp;public NutChocChipCookie() {}<br>
+                                       }
+   
+                                   </p>
+                                   <p>NutChocChipCookie cookie = new NutChocChipCookie();<br>
+                                 
+                                   <p>This results in calls to the PlainCookie constructor first, and then the constructor for ChocolateChipCookie. </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+                    <a class="carousel-control-prev" href="#carouselContentunit9" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselContentunit9" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </article>
 
 
 
