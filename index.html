@@ -1,3 +1,5 @@
+ Skip to content Pull requests Issues Marketplace Explore @JacquiKane JacquiKane / APCSVocab2 1 0 0 Code Issues Pull requests Actions Projects Wiki Security Insights Settings APCSVocab2/index.html @JacquiKane JacquiKane Add files via upload Latest commit
+7519de3 5 hours ago History 1 contributor 2978 lines (2463 sloc) 171 KB
 <!doctype html>
 <html lang="en">
 
@@ -129,6 +131,12 @@
         .bigarrow {
             font-size: 2em;
         }
+        
+        .codePara {
+            text-align: left;
+            font-weight: bold;
+            padding-left: 10%;
+        }
     </style>
 </head>
 
@@ -236,7 +244,7 @@
                 </section>
 
                 <section class="mb-5 col-10 col-md-6 col-lg-4 col-xl-3">
-                    <a data-toggle="modal" data-target="#" data-highres="unit10.png" href="#">
+                    <a data-toggle="modal" data-target="#unit10-modal" data-highres="unit10.png" href="#">
                         <img class="layout-image imgUnit" src="unit10.png" alt="Unit 10, Recursion">
                     </a>
                     <h5 class="layout-title pt-2">Unit 10 - Recursion</h5>
@@ -275,22 +283,22 @@
                                 <h6>Unit 1, Primitives</h6>
                                 <p class="carouseldef">Named location in computer memory. </p>
                                 <p class="carouseldef">Stores data for use in application. </p>
-                                <p class="carouseldef">Java is statically typed, meaning that variables must be declared, with a <i>data type</i>, before they are used.</p>
+                                <p class="carouseldef">Java is statically typed, meaning variables must be declared, with a <i>data type</i>, before they are used.</p>
                                 <p class="carouseldef">&nbsp;&nbsp;int counter;</p>
                                 <p class="carouseldef">counter is a variable, able to store the <i>data type</i> referenced as <i>int</i>.</p>
                                 <p class="carouseldef">&nbsp;&nbsp;boolean isValid;</p>
                                 <p class="carouseldef">isValid is a variable, able to store the <i>data type</i> referenced as <i>boolean</i>.</p>
-                                <p class="carouseldef">Variables store data temporarily, and can be visible inside a block of code, or globally thoughout a module. </p>
+
                             </div>
 
                             <div class="carousel-item text-center p-4">
 
                                 <h3 class="carouselh3">Data Type</h3>
                                 <h6>Unit 1, Primitives</h6>
-                                <p class="carouseldef">A descriptive term, indicating what can be done with data, and how much space is required to store it. For instance <i>int</i> and <i>double</i> variables can be divided, added, multiplied. The <i>boolean</i> data type
-                                    describes variables that can store one of two values, true or false. Basic data types in AP Computer Science curriculum (A) are int, boolean and double.</p>
-                                <p class="carouseldef">The <i>int</i> data type takes up 4 bytes of storage and represents whole numbers from -2,147,483,648 to 2,147,483,647.</p>
-                                <p class="carouseldef">The double data type takes up 8 bytes of storage and represents fractional numbers. Sufficient for storing 15 decimal digits.</p>
+                                <p class="carouseldef">Descriptive term, indicating what can be done with data, how much space required to store it. For instance <i>int</i> and <i>double</i> variables can be divided, added, multiplied. The <i>boolean</i> data type describes
+                                    variables that can store one of two values, true or false. Basic data types in AP Computer Science curriculum (A) are int, boolean and double.</p>
+                                <p class="carouseldef">The <i>int</i> data type - 4 bytes, whole numbers from -2,147,483,648 to 2,147,483,647.</p>
+                                <p class="carouseldef">The double data type - 8 bytes, fractional numbers, 15 decimal digits.</p>
                             </div>
 
 
@@ -351,9 +359,9 @@
                                 <h3 class="carouselh3">Parameter</h3>
                                 <h6>Unit 1, Primitives</h6>
                                 <p class="carouseldef">Data that is passed to a method. </p>
-                                <p class="carouseldef"> Formal parameters are described in the defintion of a method, whereas actual parameters are passed to the method in calling code.
-                                    <br> Below, rate and balance are formal parameters,<br><br> public double interestCalculated(double rate, double balance) { ...<br>&nbsp;&nbsp;&nbsp; }<br><br>
-                                    <br> ... and the actual parameters are seen in the call,<br><br> double interest = interestCalculated(0.03, 12000);
+                                <p class="carouseldef"> Formal parameters are described in method defintion, actual parameters are passed to method in calling code.
+                                    <br> <i>rate</i> and <i>balance</i> are formal parameters,<br><br> public double interestCalculated(double rate, double balance) { ...<br>&nbsp;&nbsp;&nbsp; }<br><br>
+                                    <br> ... actual parameters are in the call,<br><br> double interest = interestCalculated(0.03, 12000);
                                 </p>
                             </div>
 
@@ -475,7 +483,8 @@
                                                 Abstraction
                                             </td>
                                             <td>
-                                                Pulling out the big ideas and representing these in the OOP framewrk, as classes and objects
+                                                Pulling out big ideas as classes & objects,in OOP framewrk,
+
                                             </td>
                                         </tr>
                                         <tr>
@@ -483,16 +492,16 @@
                                                 Polymorphism
                                             </td>
                                             <td>
-                                                Allowing for different objects to specialize and respond in different ways to the same request
+                                                Different objects responding in specialized ways to same request
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>Inheritance</td>
-                                            <td>Reuse of a class code base called the super or parent class, in another class called the sub class or child class</td>
+                                            <td>Reuse of class code base in parent class, by child class</td>
                                         </tr>
                                         <tr>
                                             <td>Encapsulation</td>
-                                            <td>Subsuming the data and logic inside a unit, like a class/object</td>
+                                            <td>Subsuming data & logic inside a unit, like a class</td>
                                         </tr>
                                     </table>
                                 </p>
@@ -502,7 +511,7 @@
 
                                 <h3 class="carouselh3">Class</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">A software template from which data models called objects are created.</p>
+                                <p class="carouseldef">Software template from which data models called objects created</p>
                                 <p class="carouseldef">
                                     A class specifies
                                     <table class="tablecarouseldetail">
@@ -510,20 +519,20 @@
                                             <td>
                                                 Attributes
                                             </td>
-                                            <td>Features or characteristics of the class or object</td>
+                                            <td>Features/characteristics of class or object</td>
                                         </tr>
                                         <tr>
                                             <td>Methods</td>
-                                            <td>Blocks of code that specify what the class or object can do</td>
+                                            <td>Blocks of code, specify what the class or object can do</td>
                                         </tr>
 
                                     </table>
                                 </p>
-                                <p class="carouseldef">A Class is instantiated, or newed up, to create an object.</p>
+                                <p class="carouseldef">A Class, <i>SoccerPlayer</i>, is instantiated (newed up) to create an object, <i>player</i>.</p>
                                 <p class="carouseldef">
                                     SoccerPlayer player = <br> &nbsp;&nbsp;new SoccerPlayer("Harry Kane", 26, "Forward", "Spurs");
                                 </p>
-                                <p class="carouseldef">Here, the class is <i>SoccerPlayer</i> and the instance (object) is <i>player</i>.</p>
+
                             </div>
 
 
@@ -531,7 +540,7 @@
 
                                 <h3 class="carouselh3">Object, Instance</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">A data model created from a software template called a class. An object (also called instance) is 'instantiated' or 'newed up' from a class.</p>
+                                <p class="carouseldef">Data model created from software template called class. An object (instance) is 'instantiated' or 'newed up' from a class.</p>
                                 <p class="carouseldef">
                                     An object has
                                     <table class="tablecarouseldetail">
@@ -549,7 +558,7 @@
                                         </tr>
                                     </table>
                                     <p class="carouseldef">
-                                        In order for instance methods to be called, the object has to exist. Therfore it must be newed up before the attributes or methods can be accessed.
+                                        Instance must be newed up before instace data or methods can be accessed.
                                     </p>
                                 </p>
                             </div>
@@ -583,20 +592,19 @@
 
                                 <h3 class="carouselh3">Attribute</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">A characteristic of an object or a class. Other terms used include instance variable, class variable, property, data member, instance data, class data. </p>
+                                <p class="carouseldef">Characteristic of an object or a class. Other terms - instance variable, class variable, property, data member, instance data, class data </p>
                                 <p class="carouseldef">
-                                    public class SoccerPlayer {<br> private int age;<br> static String club = "Spurs"; ...
+                                    // <i>age</i> is an instance variable, <i>club</i> is a class or static variable public class SoccerPlayer {<br> private int age;<br> static String club = "Spurs"; ...
                                     <br> public int getAge() {<br> return this.age;<br> }
                                     <br> }
 
                                     <br>
                                 </p>
-                                <p class="carouseldef"><i>age</i> is an instance variable.
-                                </p>
+
                                 <p class="carouseldef">
                                     SoccerPlayer player = <br>&nbsp;&nbsp;new SoccerPlayer(....);<br> int playerAge = player.getAge();<br>
                                 </p>
-                                <p class="carouseldef"><i>club</i> is a class or static (key word static binds to class) variable. It can be accessed by using the class name and the dot access operator,<br><br> String clubName = SoccerPlayer.club;
+                                <p class="carouseldef"> String clubName = SoccerPlayer.club;
                                 </p>
                             </div>
 
@@ -606,8 +614,8 @@
 
                                 <h3 class="carouselh3">Method</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">A block of code, given a label, and bound to an object (instance method), or class (class method). </p>
-                                <p class="carouseldef">An instance method is described as something the object can do. </p>
+                                <p class="carouseldef">Block of code, given a label, bound to object (instance method), or class (class method). </p>
+                                <p class="carouseldef">A method is described as something the object can do. </p>
                                 <p class="carouseldef">
                                     public class SoccerPlayer {<br> private int age;<br> ...
                                     <br> public void messageCoach() {<br> ...
@@ -627,9 +635,9 @@
 
                                 <h3 class="carouselh3">Constructor</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">A special method that is responsible for instantiating or 'newing up' an object from a class.
+                                <p class="carouseldef">Special method, instantiates or 'news up' object from class.
                                 </p>
-                                <p class="carouseldef">If no constructor is defined, the default constructor can be used. This is the constructor defined at Object level. Once a constructor has been defined in the class, then the default constructor can no longer be used.
+                                <p class="carouseldef">If no constructor is defined, the default constructor can be used. This constructor is defined at Object level. Once a constructor is defined in the class, the default constructor can no longer be used.
                                 </p>
                                 <p class="carouseldef">
                                     public SoccerPlayer(String name, int age,<br> String position, String club) {<br> this.name = name;<br> this.age = age;<br> this.position = position;<br> this.club = club;<br> }
@@ -641,15 +649,15 @@
 
                                 <h3 class="carouselh3">Getter or Accessor</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">A special method that returns the value of a private attribute. </p>
+                                <p class="carouseldef">Method, returns the value of a private attribute </p>
                                 <p class="carouseldef">Attributes are declared
-                                    <i>private</i> in order to protect them from direct access. Therefore methods that are declared public are necessary to get the value of the attribute.</p>
+                                    <i>private</i> in order to protect them from direct access. Therefore methods that are public get the value of the attribute.</p>
                                 <p class="carouseldef">
                                     public class SoccerPlayer {<br> private String name;<br> ...
                                     <br> public String getName() {<br> return this.name;<br> }
                                     <br>
                                 </p>
-                                <p class="carouseldef">The accessor or getter returns the value of the attribute, and the return type mirrors the type or class of the attribute.
+                                <p class="carouseldef">The accessor or getter returns the value of the attribute, the return type mirrors the type or class of the attribute.
                                 </p>
                             </div>
 
@@ -657,14 +665,14 @@
 
                                 <h3 class="carouselh3">Setter or Mutator</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">A special method that sets the value of a (typically)private attribute. </p>
-                                <p class="carouseldef">Attributes are declared <i>private</i> in order to protect them from direct access. Therefore methods that are declared public are necessary to set the value of the attribute.</p>
+                                <p class="carouseldef">Method, sets value of a private attribute. </p>
+                                <p class="carouseldef">Attributes are declared <i>private</i> to protect them from direct access. Therefore methods that are public are necessary to set the value of the attribute.</p>
                                 <p class="carouseldef">
                                     public class SoccerPlayer {<br> private String name;<br> ...
                                     <br> public void setName(String newName) {<br> this.name = newName;<br> }
                                     <br>
                                 </p>
-                                <p class="carouseldef">The mutator or setter does not have a return the parameter mirrors the type or class of the attribute.
+                                <p class="carouseldef">Mutator or setter does not have a return, parameter mirrors the type or class of the attribute.
                                 </p>
                             </div>
 
@@ -672,7 +680,7 @@
 
                                 <h3 class="carouselh3">Overloaded Method</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">A redeclaration of an existing method, with a different parameter list. </p>
+                                <p class="carouseldef">Redeclaration of existing method, with different parameter list. </p>
                                 <p class="carouseldef">
                                     <table class="tablecarouseldetail">
                                         <tr>
@@ -705,13 +713,13 @@
 
                                 <h3 class="carouselh3">Accessibility Modifier</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">This governs the visibility of a class, a method, an attribute. </p>
-                                <p class="carouseldef"><i>private</i> gives access only within the class, whereas <i>public</i> gives access outside of the class. There are other accessibility modifiers, however these are outside the scope of the course. </p>
+                                <p class="carouseldef">Govern visibility of class, method, attribute. </p>
+                                <p class="carouseldef"><i>private</i> gives access only within class, <i>public</i> gives access outside of class. Other accessibility modifiers, outside scope of course. </p>
                                 <p class="carouseldef">
                                     public class SoccerPlayer {<br> private String name;<br> ...
                                     <br> public String getName() { return name; }
                                 </p>
-                                <p class="carouseldef">Client code, or the calling code, can new up an instance of the SoccerPlayer class, but cannot directly access the name attribute because it is private, instead, must call the getName() method, which is public.</p>
+                                <p class="carouseldef">Client code can new up an instance of the SoccerPlayer class, but cannot directly access name attribute because it is private, instead, must call the getName() method, which is public.</p>
                             </div>
 
 
@@ -721,11 +729,10 @@
 
                                 <h3 class="carouselh3">String</h3>
                                 <h6>Unit 2, Using Objects</h6>
-                                <p class="carouseldef">String is a special class that Java uses to represent String instances - strings are a bunch of characters, like "Robbie Roe". String is a reference type, used to create an instance. String instances can be created using
-                                    the new operator, <br><br> String str1 = new String("Have a great day!");<br><br> ... and by using String literals, String str2 = "Have a great day!";
+                                <p class="carouseldef">Class Java uses to represent String instances - strings are a bunch of characters, like "Robbie Roe". String is a reference type, used to create an instance. String instances can be created using the new operator, <br><br>                                    String str1 = new String("Have a great day!");<br><br> ... and by using String literals, String str2 = "Have a great day!";
                                 </p>
-                                <p class="carouseldef">The String methods you need to know about are: length(), indexOf(..), substring(..), equals(..), compareTo(..)</p>
-                                <p class="carouseldef">String instances are immutable, you cannot change them. When you do 'change' an existing String instance, a new String instance is created.</p>
+                                <p class="carouseldef">String methods: length(), indexOf(..), substring(..), equals(..), compareTo(..)</p>
+                                <p class="carouseldef">String instances are immutable, you cannot change them. When you 'change' aString instance, a new String instance is created.</p>
 
                             </div>
 
@@ -932,9 +939,9 @@
                             <div class="carousel-item active text-center p-4">
                                 <h3 class="carouselh3">Iteration</h3>
                                 <h6>Unit 4, Iteration</h6>
-                                <p class="carouseldef">An action that is repetetive, happens in a loop.</p>
-                                <p class="carouseldef">Iteration in computer programming enables the repeated execution of a block of code. Typically, a loop condition governs execution of the loop, and a <i>sentry</i> variable or loop variable is changed each time through
-                                    the loop. The loop variable forms a part of the loop condition and determines how many times the loop executes.</p>
+                                <p class="carouseldef">Action that is repetetive, happens in a loop.</p>
+                                <p class="carouseldef">Iteration enables repeated execution of a block of code. Loop condition governs execution of the loop, and <i>sentry</i> variable or loop variable is changed each time through the loop. The loop variable forms a part of
+                                    the loop condition and determines how many times the loop executes.</p>
                                 <p class="carouseldef">If a loop condition is always true, the loop never exits.</p>
                             </div>
 
@@ -1013,81 +1020,56 @@
                                 <h3 class="carouselh3">Class</h3>
                                 <h6>Unit 5, Writing Classes</h6>
                                 <p class="carouseldef">A software template in Object Oriented Programming. </p>
-                                <p class="carouseldef">Software models called objects (or instances) are made from a class, in the same way an achitectural blueprint can be used to build multiple houses.</p>
+                                <p class="carouseldef">Software models called objects (or instances) are made from a class, like an achitectural blueprint is used to build houses.</p>
                                 <p class="carouseldef">A class is a building block of Object Oriented Programming, OOP.</p>
                                 <p class="carouseldef">The 4 tenets of OOP are
-                                    <table class="tablecarouseldetail">
-                                        <tr>
-                                            <td>Abstraction - Pulling out the big ideas and forming classes</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Polymorphism - Different objects specializing different responses to the same request </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Inheritance - Reuse of a class as the basis for another class </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Encapsulation - Subsuming the logic and data inside a unit, class or object</td>
-                                        </tr>
-                                    </table>
+
+                                    <ul>
+                                        <li>Abstraction - Pulling out big ideas, forming classes</li>
+
+                                        <li>Polymorphism - Objects specializing responses to same request </li>
+
+                                        <li>Inheritance - Reuse of class as basis for another class </li>
+
+                                        <li>Encapsulation - Subsuming logic, data inside class or object</li>
+                                    </ul>
+
                                 </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Object</h3>
                                 <h6>Unit 5, Writing Classes</h6>
-                                <p class="carouseldef">A software model made from the instructions in a class. Also called an instance. We say the object has been instatiated, or 'newed up' based on the class.
+                                <p class="carouseldef">Software model made from instructions in class. Also called instance. Object is instantiated, or 'newed up' based on class.
                                 </p>
                                 <p class="carouseldef">
                                     SoccerPlayer player = new SoccerPlayer();
                                 </p>
-                                <p class="carouseldef"><i>SoccerPlayer</i> is the class, and <i>player</i> represents the object.</p>
-                                <p class="carouseldef">An instance may have instance variables and instance methods. Instance variables may be protected by an accessibility modifier and may only be viewed or changed by using methods called getters and setters.</p>
+                                <p class="carouseldef">Class is <i>SoccerPlayer</i>, <i>player</i> is object.</p>
+                                <p class="carouseldef">An instance may have instance variables and instance methods. Instance variables may be protected by accessibility modifier, viewed or changed by getters and setters.</p>
                                 <p class="carouseldef">
                                     public class SoccerPlayer {<br> private String name;<br> ...
                                     <br> public String getName() {<br> return this.name;<br> }
                                     <br>
                                 </p>
 
-                                <p class="carouseldef">An object or instance is a reference to an area of memory, the starting memory address at which the content of the object is stored.</p>
+                                <p class="carouseldef">Instance is a reference to an area of memory.
+                                </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Attribute</h3>
                                 <h6>Unit 5, Writing Classes</h6>
                                 <p class="carouseldef">A characteristic or feature of a class or object. Attributes belonging to the instance are also termed
-                                    <table class="tablecarousel">
-                                        <tr>
-                                            <td>
-                                                instance variable
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                data member
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                instance data
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                property
-                                            </td>
-                                        </tr>
-
-                                    </table>
-
-
-
-
+                                    <br> instance variable
+                                    <br> data member
+                                    <br> instance data
+                                    <br> property
 
                                 </p>
 
-                                <p class="carouseldef">By convention, attributes are protected with the private accessibility modifier. Methods called Getters and Setters get and set attribute values from outside the class. </p>
-                                <p class="carouseldef">Below, <i>name</i> is an instance variable. Keyword <i>static</i> indicates that <i>division</i> is a class variable.</p>
+                                <p class="carouseldef">By convention, attributes protected with <i>private</i> accessibility modifier. Methods called Getters and Setters get and set attribute values from outside the class. </p>
+                                <p class="carouseldef">Below, <i>name</i>, instance variable. Keyword <i>static</i> indicates <i>division</i>, class variable.</p>
                                 <p class="carouseldef">
                                     public class SoccerPlayer {<br> private String name;<br> public static String division = "Premier League"; ...
                                     <br> public String getName() {<br> return this.name;<br> }
@@ -1099,7 +1081,7 @@
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Method</h3>
                                 <h6>Unit 5, Writing Classes</h6>
-                                <p class="carouseldef">This is a block of code tied to an object or a class. It is given a signature describing it's visibility (like public or private), the return type and the name.
+                                <p class="carouseldef">Block of code tied to object or class, given signature describing visibility (like public or private), return type and name.
 
                                 </p>
                                 <p class="carouseldef">
@@ -1108,8 +1090,8 @@
                                     <br> public static associatedSport() {<br> return "Soccer aka European Football";<br> }
                                     <br>
                                 </p>
-                                <p class="carouseldef"><i>getName</i> is an instance method, called on the instance.
-                                    <i>associatedSport</i> is a class method, called on the class.</p>
+                                <p class="carouseldef"><i>getName</i>, instance method, called on the instance.
+                                    <i>associatedSport</i>, class method, called on the class.</p>
                                 <p class="carouseldef">
                                     SoccerPlayer player = new SoccerPlayer();<br> ...
                                     <br> String playerName = player.getName();<br> String sportCategory = SoccerPlayer.associatedSport();<br>
@@ -1119,8 +1101,7 @@
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Constructor</h3>
                                 <h6>Unit 5, Writing Classes</h6>
-                                <p class="carouseldef">A constructor is a special method that has responsibility for instantiating a new object based on the instructions in a class. A constructor is described as an empty constructor if it has no parameters, and a parameterized
-                                    constructor if it has a parameter list.
+                                <p class="carouseldef">Special method, instantiates new object based on class. Constructor described as empty constructor if no parameters, and parameterized constructor if it has a parameter list.
 
                                 </p>
                                 <p class="carouseldef">
@@ -1129,7 +1110,7 @@
                                     <br> public SoccerPlayer(String name, int age) {<br> this.name = name;<br> this.age = age;<br> }
                                     <br>
                                 </p>
-                                <p class="carouseldef">These constructors are called when the object is newed up from the class,<br> SoccerPlayer player = new SoccerPlayer();<br> SoccerPlayer player2 = new SoccerPlayer("Harry Kane", 27);</p>
+                                <p class="carouseldef">Constructors are called when object is newed up from class,<br> SoccerPlayer player = new SoccerPlayer();<br> SoccerPlayer player2 = new SoccerPlayer("Harry Kane", 27);</p>
                                 <p class="carouseldef">These constructors are <i>overloaded</i>.</p>
                             </div>
 
@@ -1171,7 +1152,7 @@
                                 <h3 class="carouselh3">Data Structure</h3>
                                 <h6>Unit 6, Arrays</h6>
                                 <p class="carouseldef">Feature of programming languages, supports storing and processing data, showing relationships.</p>
-                                <p class="carouseldef">Examples of data structures include arrays, Arraylist objects, 2 Dimensional arrays.</p>
+                                <p class="carouseldef">Examples - arrays, Arraylist objects, 2 Dimensional arrays.</p>
                                 <p class="carouseldef">
                                     <table class="tablecarouselborders">
                                         <tr>
@@ -1200,7 +1181,7 @@
                                         </tr>
                                     </table>
                                 </p>
-                                <p class="carouseldef">These data structures extend the ability of a programming language, and facilitate data manipulation and processing. </p>
+                                <p class="carouseldef">Data structures facilitate data manipulation and processing. </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
@@ -1723,8 +1704,8 @@
                             <div class="carousel-item active text-center p-4">
                                 <h3 class="carouselh3">Data Structure</h3>
                                 <h6>Unit 7, ArrayLists</h6>
-                                <p class="carouseldef">Feature of programming languages, supports storing and processing data, showing relationships.</p>
-                                <p class="carouseldef">Examples of data structures include arrays, Arraylist objects, 2 Dimensional arrays.</p>
+                                <p class="carouseldef">Supports storing and processing data, showing relationships.</p>
+                                <p class="carouseldef">Examples - arrays, Arraylist objects, 2 Dimensional arrays.</p>
                                 <p class="carouseldef">
                                     <table class="tablecarouselborders">
                                         <tr>
@@ -1753,28 +1734,28 @@
                                         </tr>
                                     </table>
                                 </p>
-                                <p class="carouseldef">These data structures extend the ability of a programming language, and facilitate data manipulation and processing. </p>
+                                <p class="carouseldef">Data structures facilitate data manipulation and processing. </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">ArrayList</h3>
                                 <h6>Unit 7, ArrayLists</h6>
-                                <p class="carouseldef">Data structure that stores a collection of elements, each identified by an array index. Elements are references,not primitives. This data structure is flexible, elements can be added, modified and removed.
+                                <p class="carouseldef">Data structure, stores collection of references, each identified by index. No primitives. Flexible, elements can be added, modified and removed.
                                 </p>
                                 <p class="carouseldef">
-                                    ArrayLists are declared with the class <i>ArrayList</i>, and must be newed up with the new operator.
+                                    ArrayLists declared with class <i>ArrayList</i>, newed up with new operator.
                                 </p>
-                                <p>The <i>ArrayList</i> class should be imported: import java.util.ArrayList;</p>
+                                <p><i>ArrayList</i> class should be imported: import java.util.ArrayList;</p>
                                 <p class="carouseldef">
                                     ArrayList values = new ArrayList(); // An ArrayList instance of objects<br> ArrayList&lt;String&gt; strValues = new ArrayList&lt;String&gt;(); // .. Strings<br> ArrayList&lt;SoccerPlayer&gt; players = new ArrayList&lt;SoccerPlayer&gt;();
                                     // .. SoccerPlayer instances<br>
 
                                 </p>
-                                <p>Populate the ArrayList using the <i>add method</i></p>
+                                <p>Populate the ArrayList using <i>add method</i></p>
                                 <p class="carouseldef">
                                     strValues.add("item #1");<br> <br>
                                 </p>
-                                <p>or, use conveniences to add multiple elements at once,</p>
+                                <p>or, add multiple elements at once,</p>
                                 <p>
                                     ArrayList
                                     <String> strValues = new ArrayList&lt;String&gt;Arrays.asList("item #1", "item #2", "item #3"));
@@ -2280,8 +2261,8 @@
                             <div class="carousel-item active text-center p-4">
                                 <h3 class="carouselh3">Data Structure</h3>
                                 <h6>Unit 8, 2D Arrays</h6>
-                                <p class="carouseldef">Feature of programming languages, supports storing and processing data, showing relationships.</p>
-                                <p class="carouseldef">Examples of data structures include arrays, Arraylist objects, 2 Dimensional arrays.</p>
+                                <p class="carouseldef">Supports storing and processing data, showing relationships.</p>
+                                <p class="carouseldef">Examples - arrays, Arraylist objects, 2 Dimensional arrays.</p>
                                 <p class="carouseldef">
                                     <table class="tablecarouselborders">
                                         <tr>
@@ -2301,27 +2282,8 @@
                                         </tr>
                                     </table>
                                 </p>
-                                <p>Below, items are accessed using a row index and a column index.</p>
-                                <p class="carouseldef">
-                                    <table class="tablecarouselborders">
-                                        <tr>
-                                            <td class="tablecarouseltd">00</td>
-                                            <td class="tablecarouseltd">01</td>
-                                            <td class="tablecarouseltd">02</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="tablecarouseltd">10</td>
-                                            <td class="tablecarouseltd">11</td>
-                                            <td class="tablecarouseltd">12</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="tablecarouseltd">20</td>
-                                            <td class="tablecarouseltd">21</td>
-                                            <td class="tablecarouseltd">22</td>
-                                        </tr>
-                                    </table>
-                                </p>
-                                <p class="carouseldef">These data structures extend the ability of a programming language, and facilitate data manipulation and processing. </p>
+
+                                <p class="carouseldef">Data structures facilitate data manipulation and processing. </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
@@ -2366,8 +2328,11 @@
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">2D Array Index Values, Subscripts </h3>
                                 <h6>Unit 8, 2D Arrays</h6>
-                                <p class="carouseldef">The row index is a whole number valid in range 0 to 1 less than the length of the 2D array, or the number of rows. The column index is a whole number valid in range 0 to 1 less than the number of columns.
+                                <p class="carouseldef"> 0 &lt;row index1 &lt; 2DArrayInstance.length
 
+                                </p>
+                                <p class="carouseldef">
+                                    0 &lt; column index &lt; 2DArrayInstance[0].length
                                 </p>
                                 <p>The <i>length</i> property gives the number of rows.</p>
                                 <p>The length property of a row gives the number of columns.</p>
@@ -2507,13 +2472,13 @@
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Row Major Order</h3>
                                 <h6>Unit 8, 2D Arrays</h6>
-                                <p class="carouseldef">Loop traversal sequence through a 2D array, crossing the rows and processing elements in each row in turn.
+                                <p class="carouseldef">Loop traversal crosses the rows, processes elements in each row in turn.
 
                                 </p>
                                 <p>
                                     int[][] numbers = {{1,2,3}, {4,5,6}, {7,8,9}};
                                 </p>
-                                4 is the fourth value. The values are printed starting with the first row, and traversing that first row, each time printing/processing a value.
+                                4 is the fourth value. Values are printed starting with first row, and traversing row, each time processing a value.
                                 </p>
                                 <p> <br> ----------------- <br> | 1 &rarr; | 2 &rarr; | 3 &rarr; | <span style="color:red; font-weight: bolder;">4</span> &rarr; |<br> ----------------- <br> | 5 &rarr; | 6 &rarr; | 7 &rarr; | 8 &rarr; | <br> -----------------
                                     <br> | 4 &rarr; | 3 &rarr; | 2 &rarr; | 1 &rarr; | <br> -----------------
@@ -2525,13 +2490,13 @@
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Column Major Order</h3>
                                 <h6>Unit 8, 2D Arrays</h6>
-                                <p class="carouseldef">Loop traversal sequence through a 2D array, going down the columns and processing each element in turn.
+                                <p class="carouseldef">Loop traversal goes down columns, processes each element in turn.
 
                                 </p>
                                 <p>
                                     int[][] numbers = {{1,2,3}, {4,5,6}, {7,8,9}};
                                 </p>
-                                2 is printed as the fourth value. The values are printed starting with the first column, and traversing down that first column, each time printing a value.
+                                2 is printed as the fourth value. Values printed starting with first column, traversing down column, each time printing a value.
                                 </p>
                                 <p> <br> ----------------- <br> | 1 &#8628; | <span style="color:red; font-weight: bolder;">2</span> &#8628; | 3 &#8628; | 4 &#8628; |
                                     <br> ----------------- <br> | 5 &#8628; | 6 &#8628; | 7 &#8628; | 8 &#8628; | <br> -----------------
@@ -2621,61 +2586,57 @@
                             <div class="carousel-item active text-center p-4">
                                 <h3 class="carouselh3">Class</h3>
                                 <h6>Unit 9, Inheritance</h6>
-                                <p class="carouseldef">A software template in Object Oriented Programming. </p>
-                                <p class="carouseldef">Software models called objects (or instances) are made from a class, in the same way an achitectural blueprint can be used to build multiple houses.</p>
-                                <p class="carouseldef">A class is a building block of Object Oriented Programming, OOP.</p>
+                                <p class="carouseldef">Software template in OOP </p>
+                                <p class="carouseldef">Software models, objects (or instances), are made from a class, as an achitectural blueprint is used to build houses.</p>
+                                <p class="carouseldef">Class, building block of OOP.</p>
                                 <p class="carouseldef">The 4 tenets of OOP are
-                                    <table class="tablecarouseldetail">
-                                        <tr>
-                                            <td>Abstraction - Pulling out the big ideas and forming classes</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Polymorphism - Different objects specializing different responses to the same request </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Inheritance - Reuse of a class as the basis for another class </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Encapsulation - Subsuming the logic and data inside a unit, class or object</td>
-                                        </tr>
-                                    </table>
+
+                                    <ul>
+                                        <li>Abstraction - Pulling out big ideas, forming classes</li>
+
+                                        <li>Polymorphism - Objects specializing responses to same request </li>
+
+                                        <li>Inheritance - Reuse of class as basis for another class </li>
+
+                                        <li>Encapsulation - Subsuming logic, data inside class or object</li>
+                                    </ul>
                                 </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
-                                <h3 class="carouselh3">Object</h3>
+                                <h3 class="carouselh3">Object or Instance</h3>
                                 <h6>Unit 9, Inheritance</h6>
-                                <p class="carouseldef">A software model made from the instructions in a class. Also called an instance. We say the object has been instatiated, or 'newed up' based on the class.
+                                <p class="carouseldef">Software model made from class. Object is instatiated, or 'newed up' based on class.
                                 </p>
                                 <p class="carouseldef">
                                     SoccerPlayer player = new SoccerPlayer();
                                 </p>
                                 <p class="carouseldef"><i>SoccerPlayer</i> is the class, and <i>player</i> represents the object.</p>
-                                <p class="carouseldef">An instance may have instance variables and instance methods. Instance variables may be protected by an accessibility modifier and may only be viewed or changed by using methods called getters and setters.</p>
+                                <p class="carouseldef">Instance may have instance variables, instance methods. Instance variables may be protected by accessibility modifier and may only be viewed or changed by methods called getters and setters.</p>
                                 <p class="carouseldef">
                                     public class SoccerPlayer {<br> private String name;<br> ...
                                     <br> public String getName() {<br> return this.name;<br> }
                                     <br>
                                 </p>
 
-                                <p class="carouseldef">An object or instance is a reference to an area of memory, the starting memory address at which the content of the object is stored.</p>
+                                <p class="carouseldef">An object is a reference to an area of memory.</p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Inheritance</h3>
                                 <h6>Unit 9, Inheritance</h6>
-                                <p class="carouseldef">The ability of one class, the subclass, to reuse methods and properties of another class, the superclass.
+                                <p class="carouseldef">Reuse by one class, subclass, of methods and properties of another class, superclass.
 
                                 </p>
 
                                 <p class="carouseldef"><i>Inheritance</i> is designated with keyword <i>extends</i> in Java. </p>
-                                <p>Below, class, <i>ChocolateChipCookie</i> inherits from class <i>PlainCookie</i>. Note constructors.</p>
+                                <p>Class, <i>ChocolateChipCookie</i> inherits from class <i>PlainCookie</i>. Note constructors.</p>
                                 <p class="carouseldef">
                                     public class PlainCookie {<br> &nbsp;&nbsp; private double qtyFlour;<br> &nbsp;&nbsp; // Other attributes, constructor, methods<br> &nbsp;&nbsp;&nbsp;&nbsp;public PlainCookie(double qtyFlour, double qtyButter,<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double
                                     qtySugar, double qtyEgg) {...}<br> &nbsp;&nbsp;&nbsp;&nbsp; }
                                     <br>
                                 </p>
-                                <p class="carouseldef">public class ChocChipCookie <span class="oomph">extends</span> PlainCookie  {<br> &nbsp;&nbsp; private double qtyChocChips;<br>
+                                <p class="carouseldef">public class ChocChipCookie <span class="oomph">extends</span> PlainCookie {<br> &nbsp;&nbsp; private double qtyChocChips;<br>
                                     <br> &nbsp;&nbsp;public ChocChipCookie(double qtyChocChips, double qtyButter,<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double qtySugar, double qtyEgg) {<br>                                    &nbsp;&nbsp;&nbsp;&nbsp;super(qtyFlour, qtyButter, qtySugar, qtyEgg);
                                     <br> &nbsp;&nbsp; this.qtyChocChips = qtyChocChips;<br> }
                                     <br>
@@ -2687,21 +2648,23 @@
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Class Hierarchy</h3>
                                 <h6>Unit 9, Inheritance</h6>
-                                <p class="carouseldef">A set of classes related via <i>Inheritance</i>.
+                                <p class="carouseldef">Set of classes related via <i>Inheritance</i>.
 
                                 </p>
-                                <div class="parent">PlainCookie&#127850;</div>
-                                <span class="bigarrow">&#x21a7;</span>
+                                <div>
+                                    <div class="parent">PlainCookie&#127850;</div>
+                                    <span class="bigarrow">&#x21a7;</span>
 
-                                <div class="child">ChocChipCookie &#127850;</div>
+                                    <div class="child">ChocChipCookie &#127850;</div>
 
-                                <span class="bigarrow">&#x21a7;</span>
+                                    <span class="bigarrow">&#x21a7;</span>
 
-                                <div class="grandchild">NutChocChipCookie&#127850;</div>
+                                    <div class="grandchild">NutChocChipCookie&#127850;</div>
+                                </div>
                                 <br>
-                                <p><i>PlainCookie</i> is the parent class of <i>ChocChipCookie</i>, which in turn is the parent class of
+                                <p><i>PlainCookie</i> is parent class of <i>ChocChipCookie</i>, which in turn is parent class of
                                     <i>NutChocChipCookie</i>.</p>
-                                <p>An IS-A relationship exists between the subclasses and the superclass. NutChocChipCookie IS-A ChocChipCookie, which IS-A PlainCookie.
+                                <p class="carouseldef">IS-A relationship between subclasses and superclass. NutChocChipCookie IS-A ChocChipCookie, which IS-A PlainCookie.
                                 </p>
 
                             </div>
@@ -2711,7 +2674,7 @@
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Superclass, Subclass</h3>
                                 <h6>Unit 9, Inheritance</h6>
-                                <p class="carouseldef">A Superclass or parent class is reused by a subclass or child class, via <i>Inheritance</i>.
+                                <p class="carouseldef">Superclass or parent class reused by subclass or child class, via <i>Inheritance</i>.
 
                                 </p>
                                 <div class="parent">PlainCookie&#127850;</div>
@@ -2723,10 +2686,9 @@
 
                                 <div class="grandchild">NutChocChipCookie&#127850;</div>
                                 <br>
-                                <p><i>PlainCookie</i> is the parent class of <i>ChocChipCookie</i>, 
-                                    which in turn is the parent class of
+                                <p><i>PlainCookie</i> is the parent class of <i>ChocChipCookie</i>, the parent class of
                                     <i>NutChocChipCookie</i>.</p>
-                                <p>An IS-A relationship exists between the subclasses and the superclass. NutChocChipCookie IS-A ChocChipCookie, which IS-A PlainCookie.
+                                <p class="carouseldef">IS-A relationship exists between subclasses and superclass. NutChocChipCookie IS-A ChocChipCookie, which IS-A PlainCookie.
                                 </p>
 
                             </div>
@@ -2737,8 +2699,7 @@
                                 <h3 class="carouselh3">Override</h3>
                                 <h6>Unit 9, Inheritance</h6>
                                 <p class="carouseldef">
-                                    A subclass can redefine a method from the parent class. When the method is called from an instance of the subclass, the method defined in the subclass is called, thus <span class="oomph">overriding</span> the method
-                                    in the superclass.
+                                    Subclass can redefine method from parent class. When method called from instance of subclass, method defined in subclass is called, thus <span class="oomph">overriding</span> method in superclass.
 
                                 </p>
                                 <p class="carouseldef">
@@ -2755,14 +2716,14 @@
                                 <p class="carouseldef">PlainCookie chocCookie = new ChocChipCookie();</p>
 
                                 <p>chocCookie.displayBakeTemp();</p>
-                                <p>As a result of the code, <i>350 Fahrenheit </i>is displayed!</p>
+                                <p><i>350 Fahrenheit </i>is displayed!</p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Polymorphism</h3>
                                 <h6>Unit 9, Inheritance</h6>
                                 <p class="carouseldef">
-                                    When objects (related via inheritance) respond in different ways to the same request. Overriding methods is how Java does Polymorphism!
+                                    When objects (related via inheritance) respond in different ways to same request. Overriding methods is how Java does Polymorphism!
 
                                 </p>
                                 <p class="carouseldef">
@@ -2786,72 +2747,64 @@
                                 <h3 class="carouselh3">Upcasting</h3>
                                 <h6>Unit 9, Inheritance</h6>
                                 <p class="carouseldef">
-                                    Upcasting means casting to a superclass, 
-                                    further UP in the class hierarchy. Upcasting is also known as generalization or widening.
+                                    Casting to superclass, further UP in class hierarchy. Also known as generalization or widening.
 
                                 </p>
-                              
+
                                 <p class="carouseldef">
                                     public class PlainCookie {....}
-                          
+
 
                                 </p>
                                 <p class="carouseldef">
                                     public class ChocChipCookie extends PlainCookie{ ....}
-                                
+
 
                                 </p>
                                 <p class="carouseldef">
                                     PlainCookie chocCookie = new ChocChipCookie();</p>
                                 <br>
-                                <p class="carouseldef">PlainCookie is the superclass. 
-                                    An instance of ChocChipCookie is created. 
-                                    An <i>implicit</i> upcast is done here, to the superclass.</p>
-                                    <p>Upcasting can result in hiding the specialized class' attributes/methods, but 
-                                        that can be taken care of by casting to the specialized class.</p>
-                                        <p>PlainCookie chocCookie = new ChocChipCookie();</p>
-                                        <p>...</p>
-                                        <p>int quantityChips = ((ChocChipCookie)chocCookie).getQtyChocChips();</p>
+                                <p class="carouseldef">
+                                    <i>Implicit</i> upcast done here, to superclass.</p>
+                                <p>int quantityChips = ((ChocChipCookie)chocCookie).getQtyChocChips();</p>
+                                <p class="carouseldef">Upcasting can result in hiding specialized class' attributes/methods - can be resolved by casting to specialized class.</p>
+                                <p>PlainCookie chocCookie = new ChocChipCookie();</p>
+
+
                             </div>
 
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Downcasting</h3>
                                 <h6>Unit 9, Inheritance</h6>
                                 <p class="carouseldef">
-                                    Downcasting, also called specialization or narrowing, 
-                                    casting an instance of a superclass
-                                    to an instance of a subclass. 
+                                    Specialization or narrowing, casts instance of superclass to instance of subclass.
 
                                 </p>
-                      
-<p class="carouseldef">In Java, downcasting can cause a <i>Class Cast Exception</i> - an exception that is thrown when the 
-    real object does not match the class that the object is being cast to.</p>
+
+                                <p class="carouseldef">In Java, downcasting can cause <i>Class Cast Exception</i> - exception thrown when real object does not match class object being cast to.</p>
                                 <p class="carouseldef">
                                     public class PlainCookie {....}
 
                                 </p>
                                 <p class="carouseldef">
-                                    public class ChocChipCookie extends PlainCookie{....
-                                    }
+                                    public class ChocChipCookie extends PlainCookie{.... }
 
                                 </p>
-                                <p>This causes an incompatible types (classes) error,</p>
+                                <p>This causes incompatible types (classes) error,</p>
                                 <p class="carouseldef">
                                     ChocChipCookie cookie = new Cookie();<br>
-                                    </p>
-                                    <p>This explicit cast removes the incompatible types issue, 
-                                        but causes a Class Cast Exception to be thrown at runtime (when the code runs).</p>
-                                        <p>  ChocChipCookie cookie = (ChocChipCookie)new Cookie();<br></p>
+                                </p>
+                                <p class="carouseldef">Explicit cast removes incompatible types issue, but causes Class Cast Exception at runtime.</p>
+                                <p> ChocChipCookie cookie = (ChocChipCookie)new Cookie();<br></p>
                                 <br>
-                            <p>Downcasting is not allowed in Java, upcasting is!</p>
+                                <p>Downcasting is not allowed in Java, upcasting is!</p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Class Cast Exception</h3>
                                 <h6>Unit 9, Inheritance</h6>
                                 <p class="carouseldef">
-                                    An exception that is thrown at runtime when an instance of a 
-                                    superclass is downcast to a subclass.
+                                    Exception thrown at runtime when instance of superclass downcast to subclass.
 
                                 </p>
                                 <p class="carouseldef">
@@ -2859,17 +2812,15 @@
 
                                 </p>
                                 <p class="carouseldef">
-                                    public class ChocChipCookie extends PlainCookie{....
-                                    }
+                                    public class ChocChipCookie extends PlainCookie{.... }
 
                                 </p>
                                 <p>This causes an incompatible types (classes) error,</p>
                                 <p class="carouseldef">
                                     ChocChipCookie cookie = new Cookie();<br>
-                                    </p>
-                                    <p class="carouseldef">This explicit cast removes the incompatible types issue, 
-                                        but causes a Class Cast Exception to be thrown at runtime (when the code runs).</p>
-                                        <p>  ChocChipCookie cookie = (ChocChipCookie)new Cookie();<br></p>
+                                </p>
+                                <p class="carouseldef">Explicit cast removes incompatible types issue, but causes Class Cast Exception runtime.</p>
+                                <p> ChocChipCookie cookie = (ChocChipCookie)new Cookie();<br></p>
                                 <br>
                             </div>
 
@@ -2877,70 +2828,51 @@
                                 <h3 class="carouselh3">Implicit Call To Super</h3>
                                 <h6>Unit 9, Inheritance</h6>
                                 <p class="carouseldef">
-                                 When classes are related in a hierarchy, 
-                                 the superclass constructor is called,
-                                 even without specific code.  
+                                    When classes are related in a hierarchy, superclass constructor called, even without specific code.
 
                                 </p>
                                 <p class="carouseldef">
-                                    public class PlainCookie {....<br>
-                                        &nbsp;&nbsp;public PlainCookie() {}<br>
-                                    }
+                                    public class PlainCookie {....<br> &nbsp;&nbsp;public PlainCookie() {}<br> }
 
                                 </p>
                                 <p class="carouseldef">
-                                    public class ChocChipCookie extends PlainCookie{....<br>
-                                        &nbsp;&nbsp;public ChocChipCookie() {}<br>
-                                    }
+                                    public class ChocChipCookie extends PlainCookie{....<br> &nbsp;&nbsp;public ChocChipCookie() {}<br> }
 
                                 </p>
                                 <p class="carouseldef">
-                                    public class NutChocChipCookie extends ChocChipCookie{....
-                                        &nbsp;&nbsp;public NutChocChipCookie() {}<br>
-                                    }
+                                    public class NutChocChipCookie extends ChocChipCookie{.... &nbsp;&nbsp;public NutChocChipCookie() {}<br> }
 
                                 </p>
                                 <p>NutChocChipCookie cookie = new NutChocChipCookie();<br>
-                              
-                                <p>This results in calls to the PlainCookie constructor first, and then the constructor for ChocolateChipCookie. </p>
+
+                                    <p class="carouseldef">... calls PlainCookie constructor, followed by ChocolateChipCookie constructor. </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
                                 <h3 class="carouselh3">Explicit Call To Super</h3>
                                 <h6>Unit 9, Inheritance</h6>
                                 <p class="carouseldef">
-                                    When classes are related in a hierarchy, it may be 
-                                    necessary to code a call to super, so that values are 
-                                    assigned to attributes correctly.This is explicitely calling the constructor of the superclass.
-                                   
-   
-                                   </p>
-                                   <p class="carouseldef">
-                                       public class PlainCookie {....<br>
-                                           &nbsp;&nbsp;public PlainCookie(int flour, 
-                                           int eggs, int butter) {...
-                                           }
-                                           <br>
-                                       }
-   
-                                   </p>
-                                   <p class="carouseldef">
-                                       public class ChocChipCookie extends PlainCookie{....<br>
-                                           &nbsp;&nbsp;public ChocChipCookie(int chocChips, 
-                                           int flour, int eggs, int butter) {<br>
-                                        &nbsp;&nbsp;}<br>
-                                       }
-   
-                                   </p>
-                                   <p class="carouseldef">
-                                       public class NutChocChipCookie extends ChocChipCookie{....
-                                           &nbsp;&nbsp;public NutChocChipCookie() {}<br>
-                                       }
-   
-                                   </p>
-                                   <p>NutChocChipCookie cookie = new NutChocChipCookie();<br>
-                                 
-                                   <p>This results in calls to the PlainCookie constructor first, and then the constructor for ChocolateChipCookie. </p>
+                                    When classes are related in hierarchy, may be necessary to call superclass, so values assigned to attributes. This is explicitely calling constructor of superclass.
+
+
+                                </p>
+                                <p class="carouseldef">
+                                    public class PlainCookie {....<br> &nbsp;&nbsp;public PlainCookie(int flour, int eggs, int butter) {... }
+                                    <br> }
+
+                                </p>
+                                <p class="carouseldef">
+                                    public class ChocChipCookie extends PlainCookie{....<br> &nbsp;&nbsp;public ChocChipCookie(int chocChips, int flour, int eggs, int butter) {<br> &nbsp;&nbsp;}
+                                    <br> }
+
+                                </p>
+                                <p class="carouseldef">
+                                    public class NutChocChipCookie extends ChocChipCookie{.... &nbsp;&nbsp;public NutChocChipCookie() {}<br> }
+
+                                </p>
+                                <p>NutChocChipCookie cookie = new NutChocChipCookie();<br>
+
+                                    <p class="carouseldef">PlainCookie constructor called, then ChocolateChipCookie constructor. </p>
                             </div>
 
                         </div>
@@ -2966,6 +2898,105 @@
 
 
 
+    <!--   Modals for UNIT 10 RECURSION -->
+    <article id="unit10-modal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content modal-lg">
+
+                <div class="container carouselback">
+                    <div id="carouselContentunit10" class="carousel carouselback slide" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+
+                            <div class="carousel-item active text-center p-4">
+                                <h3 class="carouselh3">Recursion</h3>
+                                <h6>Unit 10, Recursion</h6>
+                                <p class="carouseldef">A software engineering technique in which a block of code (method, function) calls itself. </p>
+                                <p class="carouseldef">Below, method <i>summer</i> is a recursive method. It adds the values in an array.</p>
+                                <p class="codePara"> public static int summer(int[] nums, int index) {<br> &nbsp;&nbsp;if (index == 0)<br> &nbsp;&nbsp;&nbsp;&nbsp; return nums[0];<br> &nbsp;&nbsp;
+                                    <br> &nbsp;&nbsp;&nbsp;&nbsp;return (nums[index] + summer(nums, index -1)); }
+                                </p>
+                            </div>
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Base Case</h3>
+                                <h6>Unit 10, Recursion</h6>
+                                <p class="carouseldef">The condition handled before a recursive call returns to the caller.
+                                </p>
+                                <p class="codePara"> // model a(n) = a +(n-1)d<br> public static int arithmeticSequence(int n, int d, int a) {<br>
+                                    <span style="color:red">&nbsp;&nbsp;// Base case<br> &nbsp;&nbsp;if (n == 1) {<br> &nbsp;&nbsp;&nbsp;&nbsp; return a;</span><br> &nbsp;&nbsp;}
+                                    <br> &nbsp;&nbsp;// Recursive Case<br> &nbsp;&nbsp;&nbsp;&nbsp;return (arithmeticSequence(n - 1, d, a) + d);<br> }
+                                </p>
+
+                            </div>
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Recursive Case</h3>
+                                <h6>Unit 10, Recursion</h6>
+                                <p class="carouseldef">The condition that causes the recursive routine to call itself.
+                                    <p class="codePara"> // model a(n) = a +(n-1)d<br> public static int arithmeticSequence(int n, int d, int a) {<br> &nbsp;&nbsp;// Base case<br> &nbsp;&nbsp;if (n == 1) {<br> &nbsp;&nbsp;&nbsp;&nbsp; return a;<br> &nbsp;&nbsp;}
+                                        <br> &nbsp;&nbsp;<span style="color:red">// Recursive Case<br> 
+                                            &nbsp;&nbsp;&nbsp;&nbsp;return (arithmeticSequence(n - 1, d, a) + d);</span><br> }
+                                    </p>
+
+                            </div>
+
+
+
+                            <div class="carousel-item text-center p-4">
+                                <h3 class="carouselh3">Stack Overflow Error</h3>
+                                <h6>Unit 10, Recursion</h6>
+                                <p class="carouseldef">Exception thrown when there are too many recursive calls, all of which leave data on the stack.
+
+                                </p>
+                                <p class="carouseldef">
+                                    A stack overflow exception is typically thrown when a base case has been omitted from a recursive solution, and the stack reaches it'slimit.
+                                </p>
+                                <p>
+                                    <table class="tablecarouselborders">
+                                        <tr>
+                                            <td class="tablecarouselborders">99</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablecarouselborders">...</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablecarouselborders">...</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablecarouselborders">44</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tablecarouselborders">33</td>
+                                        </tr>
+
+                                    </table>
+                                </p>
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+
+                        <a class="carousel-control-prev" href="#carouselContentunit10" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselContentunit10" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <!----------------------------------------------------------------------------->
+
     <!----------------------------------------------------------------------------->
 
 
@@ -2976,3 +3007,5 @@
 </body>
 
 </html>
+
+© 2021 GitHub, Inc. Terms Privacy Security Status Docs Contact GitHub Pricing API Training Blog Aboutcarousel
