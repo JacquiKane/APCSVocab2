@@ -1,6 +1,4 @@
- Skip to content Pull requests Issues Marketplace Explore @JacquiKane JacquiKane / APCSVocab2 1 0 0 Code Issues Pull requests Actions Projects Wiki Security Insights Settings APCSVocab2/index.html @JacquiKane JacquiKane Add files via upload Latest commit
-7519de3 5 hours ago History 1 contributor 2978 lines (2463 sloc) 171 KB
-<!doctype html>
+ <!doctype html>
 <html lang="en">
 
 <head>
@@ -97,7 +95,7 @@
         
         .parent {
             width: 150px;
-            height: 50px;
+            height: 30px;
             margin-left: 250px;
             background-color: lightgreen;
             color: white;
@@ -108,7 +106,7 @@
         
         .child {
             width: 200px;
-            height: 50px;
+            height: 30px;
             margin-left: 250px;
             background-color: limegreen;
             color: white;
@@ -119,7 +117,7 @@
         
         .grandchild {
             width: 300px;
-            height: 50px;
+            height: 30px;
             margin-left: 250px;
             background-color: darkgreen;
             color: white;
@@ -476,34 +474,23 @@
                                 <h6>Unit 2, Using Objects</h6>
                                 <p class="carouseldef">Object Oriented Programming. A software engineering paradigm (technique) in which templates called classes are used to create data models called objects. The application is built around the objects.</p>
                                 <p class="carouseldef">
-                                    The 4 tenets of OOP are
-                                    <table class="tablecarouseldetail">
-                                        <tr>
-                                            <td>
-                                                Abstraction
-                                            </td>
-                                            <td>
-                                                Pulling out big ideas as classes & objects,in OOP framewrk,
+                                    The 4 tenets of OOP are<br>
+                                    &#x2610;
+                                                Abstraction - 
+                                            
+                                                Big ideas as classes & objects,in OOP framework<br>
 
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                Polymorphism
-                                            </td>
-                                            <td>
-                                                Different objects responding in specialized ways to same request
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Inheritance</td>
-                                            <td>Reuse of class code base in parent class, by child class</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Encapsulation</td>
-                                            <td>Subsuming data & logic inside a unit, like a class</td>
-                                        </tr>
-                                    </table>
+                                                &#x2610;          Polymorphism -
+                                            
+                                                Different objects responding in specialized ways 
+                                                to same request<br>
+                                         
+                                                &#x2610;Inheritance - 
+                                            Reuse of class code base in parent class, by child class<br>
+                                        
+                                            &#x2610;Encapsulation - 
+                                            Subsuming data & logic inside class/object</td>
+                                      
                                 </p>
                             </div>
 
@@ -1024,15 +1011,16 @@
                                 <p class="carouseldef">A class is a building block of Object Oriented Programming, OOP.</p>
                                 <p class="carouseldef">The 4 tenets of OOP are
 
-                                    <ul>
-                                        <li>Abstraction - Pulling out big ideas, forming classes</li>
+                                  <br>
+                                  &#x2610;Abstraction - Pulling out big ideas, forming classes<br>
 
-                                        <li>Polymorphism - Objects specializing responses to same request </li>
+                                  &#x2610;Polymorphism - Objects specializing responses to same request 
+                                    <br>
 
-                                        <li>Inheritance - Reuse of class as basis for another class </li>
+                                    &#x2610;Inheritance - Reuse of class as basis for another class <br>
 
-                                        <li>Encapsulation - Subsuming logic, data inside class or object</li>
-                                    </ul>
+                                    &#x2610; Encapsulation - Subsuming logic, data inside class or object<br>
+                                
 
                                 </p>
                             </div>
@@ -2591,15 +2579,15 @@
                                 <p class="carouseldef">Class, building block of OOP.</p>
                                 <p class="carouseldef">The 4 tenets of OOP are
 
-                                    <ul>
-                                        <li>Abstraction - Pulling out big ideas, forming classes</li>
+                                  <br>
+                                  &#x2610; Abstraction - Pulling out big ideas, forming classes<br>
 
-                                        <li>Polymorphism - Objects specializing responses to same request </li>
+                                  &#x2610;     Polymorphism - Objects specializing responses to same request <br>
 
-                                        <li>Inheritance - Reuse of class as basis for another class </li>
+                                  &#x2610;     Inheritance - Reuse of class as basis for another class <br>
 
-                                        <li>Encapsulation - Subsuming logic, data inside class or object</li>
-                                    </ul>
+                                  &#x2610;     Encapsulation - Subsuming logic, data inside class or object<br>
+                                    
                                 </p>
                             </div>
 
@@ -2630,15 +2618,23 @@
                                 </p>
 
                                 <p class="carouseldef"><i>Inheritance</i> is designated with keyword <i>extends</i> in Java. </p>
-                                <p>Class, <i>ChocolateChipCookie</i> inherits from class <i>PlainCookie</i>. Note constructors.</p>
+                                <p>Class, <i>ChocolateChipCookie</i> inherits from class 
+                                    <i>PlainCookie</i>. The subclass parameterized constructor calls <i>super</i> constructor.</p>
                                 <p class="carouseldef">
-                                    public class PlainCookie {<br> &nbsp;&nbsp; private double qtyFlour;<br> &nbsp;&nbsp; // Other attributes, constructor, methods<br> &nbsp;&nbsp;&nbsp;&nbsp;public PlainCookie(double qtyFlour, double qtyButter,<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double
-                                    qtySugar, double qtyEgg) {...}<br> &nbsp;&nbsp;&nbsp;&nbsp; }
+                                    public class PlainCookie {<br> 
+                                        &nbsp;&nbsp; private double qtyFlour;<br> 
+                                        &nbsp;&nbsp; // Other attributes, constructor, methods<br> 
+                                        &nbsp;&nbsp;&nbsp;&nbsp; }
                                     <br>
                                 </p>
-                                <p class="carouseldef">public class ChocChipCookie <span class="oomph">extends</span> PlainCookie {<br> &nbsp;&nbsp; private double qtyChocChips;<br>
-                                    <br> &nbsp;&nbsp;public ChocChipCookie(double qtyChocChips, double qtyButter,<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double qtySugar, double qtyEgg) {<br>                                    &nbsp;&nbsp;&nbsp;&nbsp;super(qtyFlour, qtyButter, qtySugar, qtyEgg);
-                                    <br> &nbsp;&nbsp; this.qtyChocChips = qtyChocChips;<br> }
+                                <p class="carouseldef">public class ChocChipCookie 
+                                    <span class="oomph">extends</span> 
+                                    PlainCookie {<br> &nbsp;&nbsp; private double qtyChocChips;<br>
+                                    <br> &nbsp;&nbsp;public ChocChipCookie(double qtyChocChips, 
+                                    double qtyFlour,...)  
+                                    {<br>                                   
+                                         &nbsp;&nbsp;&nbsp;&nbsp;super(qtyFlour, ...);
+                                    ... }
                                     <br>
                                 </p>
                             </div>
@@ -2712,11 +2708,10 @@
                                     <br> public void displayBakeTemp() {<br> &nbsp;&nbsp;System.out.println("350 Fahrenheit"); <br>}<br>
 
                                 </p>
-                                <p class="carouseldef">PlainCookie cookie = new Cookie();</p>
-                                <p class="carouseldef">PlainCookie chocCookie = new ChocChipCookie();</p>
+                                <p class="carouseldef">PlainCookie cookie = new Cookie();<br>
+                                PlainCookie chocCookie = new ChocChipCookie();</p>
 
-                                <p>chocCookie.displayBakeTemp();</p>
-                                <p><i>350 Fahrenheit </i>is displayed!</p>
+                                <p>chocCookie.displayBakeTemp(); //<i>350 Fahrenheit </i>displayed!</p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
@@ -2727,19 +2722,19 @@
 
                                 </p>
                                 <p class="carouseldef">
-                                    public class PlainCookie {<br> ....
+                                    public class PlainCookie {
                                     <br> public void displayBakeTemp() {<br> &nbsp;&nbsp;System.out.println("385 Fahrenheit"); <br>}<br>
 
                                 </p>
                                 <p class="carouseldef">
-                                    public class ChocChipCookie extends PlainCookie{<br> ....
+                                    public class ChocChipCookie extends PlainCookie{
                                     <br> public void displayBakeTemp() {<br> &nbsp;&nbsp;System.out.println("350 Fahrenheit"); <br>}<br>
 
                                 </p>
                                 <p class="carouseldef">PlainCookie cookie = new Cookie();<br>PlainCookie chocCookie = new ChocChipCookie();</p>
                                 <br>
-                                <p>chocCookie.displayBakeTemp(); // <i>350 Fahrenheit </i>is displayed!</p>
-                                <p>cookie.displayBakeTemp(); // <i>385 Fahrenheit </i>is displayed!</p>
+                                <p>chocCookie.displayBakeTemp(); // <i>350 Fahrenheit </i>is displayed!<br>
+                                cookie.displayBakeTemp(); // <i>385 Fahrenheit </i>is displayed!</p>
                             </div>
 
 
@@ -2769,6 +2764,7 @@
                                 <p>int quantityChips = ((ChocChipCookie)chocCookie).getQtyChocChips();</p>
                                 <p class="carouseldef">Upcasting can result in hiding specialized class' attributes/methods - can be resolved by casting to specialized class.</p>
                                 <p>PlainCookie chocCookie = new ChocChipCookie();</p>
+
 
 
                             </div>
@@ -2845,7 +2841,8 @@
                                 </p>
                                 <p>NutChocChipCookie cookie = new NutChocChipCookie();<br>
 
-                                    <p class="carouseldef">... calls PlainCookie constructor, followed by ChocolateChipCookie constructor. </p>
+                                    <p class="carouseldef">PlainCookie constructor called, 
+                                        followed by ChocChipCookie constructor, and then NutChocChipCookie constructor. </p>
                             </div>
 
                             <div class="carousel-item text-center p-4">
@@ -2857,22 +2854,21 @@
 
                                 </p>
                                 <p class="carouseldef">
-                                    public class PlainCookie {....<br> &nbsp;&nbsp;public PlainCookie(int flour, int eggs, int butter) {... }
+                                    public class PlainCookie {....<br> 
+                                        &nbsp;&nbsp;public PlainCookie(int flour, ....) {... }
                                     <br> }
 
                                 </p>
                                 <p class="carouseldef">
-                                    public class ChocChipCookie extends PlainCookie{....<br> &nbsp;&nbsp;public ChocChipCookie(int chocChips, int flour, int eggs, int butter) {<br> &nbsp;&nbsp;}
-                                    <br> }
+                                    public class ChocChipCookie extends PlainCookie{....<br> 
+                                        &nbsp;&nbsp;public ChocChipCookie(int chocChips, int flour, ...) {<br> 
+                                            &nbsp;&nbsp; super(qtyFlour, ...);...&nbsp;&nbsp;&nbsp;&nbsp;<br>}
+                                    <br> &nbsp;}
 
                                 </p>
-                                <p class="carouseldef">
-                                    public class NutChocChipCookie extends ChocChipCookie{.... &nbsp;&nbsp;public NutChocChipCookie() {}<br> }
+                               
 
-                                </p>
-                                <p>NutChocChipCookie cookie = new NutChocChipCookie();<br>
-
-                                    <p class="carouseldef">PlainCookie constructor called, then ChocolateChipCookie constructor. </p>
+                                    
                             </div>
 
                         </div>
@@ -3007,5 +3003,3 @@
 </body>
 
 </html>
-
-© 2021 GitHub, Inc. Terms Privacy Security Status Docs Contact GitHub Pricing API Training Blog Aboutcarousel
